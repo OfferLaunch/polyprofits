@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyProfits – Automated Polymarket Bot</title>
+
+    <meta name="description" content="PolyProfits is a fully automated Polymarket bot that trades on your behalf. Set it and forget it—we handle the rest.">
+
+    <meta name="theme-color" content="#111F46">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PolyProfits">
+
+    <meta property="og:title" content="PolyProfits – Automated Polymarket Bot">
+    <meta property="og:description" content="Fully automated Polymarket bot that wins on your behalf. Completely hands-free.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://polyprofits.co">
+    <meta property="og:image" content="https://polyprofits.co/assets/images/placeholders/og-image.svg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PolyProfits – Automated Polymarket Bot">
+    <meta name="twitter:description" content="Fully automated Polymarket bot that wins on your behalf.">
+
+    <link rel="icon" type="image/png" href="assets/images/emblems/emblem-blue.png">
+    <link rel="icon" type="image/png" href="assets/images/emblems/emblem-black.png" media="(prefers-color-scheme: light)">
+    <link rel="apple-touch-icon" href="assets/images/emblems/emblem-blue.png">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="preload" href="styles.css?v=1" as="style">
+    <link rel="preload" href="script.js?v=1" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" as="style" crossorigin>
+
+    <style>
+        body { font-family: 'Manrope', sans-serif; background: transparent; color: #FAFBFF; margin: 0; padding: 0; padding-top: 72px; }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; height: 72px; }
+        .nav-logo-img { height: 40px; width: auto; }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; border: none; background: transparent; }
+        .hamburger span { width: 22px; height: 2px; background: #FAFBFF; border-radius: 1px; transition: transform 0.3s, opacity 0.3s; }
+        @media (max-width: 768px) { .hamburger { display: flex; } }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=1">
+    <link rel="stylesheet" href="light-pillar-bundle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+</head>
+<body class="home-page">
+    <div class="page-background">
+        <div id="light-pillar-root" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 0; overflow: hidden; pointer-events: none;"></div>
+    </div>
+
+    <nav class="navbar nav-traditional">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="assets/images/logos/logo-primary.png" alt="PolyProfits" class="nav-logo-img" loading="eager">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="process">How It Works</a></li>
+                <li><a href="about">About Us</a></li>
+                <li><a href="results">Results</a></li>
+                <li><a href="https://go.polyprofits.co/fb-vsl" class="cta-button" target="_blank" rel="noopener noreferrer">Get Started</a></li>
+            </ul>
+            <button type="button" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Automated Polymarket trading that works for you.</h1>
+                <p class="hero-subtitle">PolyProfits is a bot that trades on Polymarket—prediction markets where you can participate in real-world outcomes—so you don’t have to. Set it up once. We run it 24/7. No screens to watch, no decisions to make.</p>
+                <div class="hero-buttons">
+                    <a href="https://go.polyprofits.co/fb-vsl" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <span>Get Started</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="process" class="btn btn-secondary">
+                        <span>How It Works</span>
+                        <i class="fas fa-cog" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pillars" aria-labelledby="why-heading">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="why-heading">Why PolyProfits</h2>
+                <p>Three reasons to let the bot handle your Polymarket activity.</p>
+            </div>
+            <div class="pillars-layout">
+                <div class="pillar-row">
+                    <div class="pillar-number-large" aria-hidden="true">1</div>
+                    <div class="pillar-content">
+                        <h3>Fully automated</h3>
+                        <p>The bot runs around the clock on Polymarket. You don’t watch the markets or place trades yourself.</p>
+                    </div>
+                </div>
+                <div class="pillar-row">
+                    <div class="pillar-number-large" aria-hidden="true">2</div>
+                    <div class="pillar-content">
+                        <h3>Designed to perform</h3>
+                        <p>Strategy and execution are built to take advantage of prediction markets on your behalf.</p>
+                    </div>
+                </div>
+                <div class="pillar-row">
+                    <div class="pillar-number-large" aria-hidden="true">3</div>
+                    <div class="pillar-content">
+                        <h3>Truly hands-off</h3>
+                        <p>Set your preferences once. After that, we handle everything—no daily check-ins or manual choices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="final-cta" aria-labelledby="cta-heading">
+        <div class="container">
+            <div class="cta-content">
+                <h2 id="cta-heading">Ready to go automated?</h2>
+                <p>Get in touch and we’ll walk you through getting started.</p>
+                <div class="cta-buttons">
+                    <a href="https://go.polyprofits.co/fb-vsl" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <span>Contact Us</span>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/logos/logo-white.png" alt="PolyProfits" class="footer-logo" loading="lazy">
+                    <p>Automated Polymarket trading on your behalf. Set it once; we run it.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="process">How It Works</a></li>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="results">Results</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="legal/terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PolyProfits. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=1"></script>
+    <script src="performance-optimization.js?v=1"></script>
+    <script src="light-pillar-bundle.js"></script>
+</body>
+</html>

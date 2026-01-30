@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>About Us | PolyProfits</title>
+    <meta name="description" content="About PolyProfits—the automated Polymarket bot that wins on your behalf.">
+    <meta name="canonical" content="https://polyprofits.co/about.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="PolyProfits">
+    <meta name="publisher" content="PolyProfits">
+    <meta name="keywords" content="PolyProfits, Polymarket, prediction markets, automated trading bot">
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="United States">
+    <meta name="language" content="en">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="General">
+    <meta name="distribution" content="Global">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About Us | PolyProfits">
+    <meta property="og:description" content="About PolyProfits—the automated Polymarket bot that wins on your behalf.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://polyprofits.co/about.html">
+    <meta property="og:image" content="https://polyprofits.co/assets/images/placeholders/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PolyProfits About Us">
+    <meta property="og:site_name" content="PolyProfits">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us | PolyProfits">
+    <meta name="twitter:description" content="About PolyProfits—the automated Polymarket bot that wins on your behalf.">
+    <meta name="twitter:image" content="https://polyprofits.co/assets/images/placeholders/og-image.svg">
+    <meta name="twitter:image:alt" content="PolyProfits About Us">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/emblems/emblem-blue.png">
+    <link rel="icon" type="image/png" href="assets/images/emblems/emblem-black.png" media="(prefers-color-scheme: light)">
+    <link rel="apple-touch-icon" href="assets/images/emblems/emblem-blue.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=1758294251">
+    <link rel="stylesheet" href="light-pillar-bundle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            padding: 120px 0 80px;
+            background: transparent; /* Changed to transparent to show Silk background */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1; /* Ensure content is above background */
+        }
+        
+        /* .about-hero::before gradient removed to show Silk background */
+        /* .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(17, 31, 70, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 75% 75%, rgba(17, 31, 70, 0.08) 0%, transparent 60%),
+                linear-gradient(135deg, rgba(17, 31, 70, 0.05) 0%, transparent 40%);
+            pointer-events: none;
+        } */
+        
+        .about-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        .about-hero .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .about-content {
+            padding: 80px 0;
+            background: rgba(17, 17, 17, 0.95);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-content .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .about-content .content-section {
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+        }
+        
+        .about-content .content-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .about-content .content-section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 1.5rem 0;
+            line-height: 1.3;
+        }
+        
+        .about-content .content-section h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        .about-content .content-section h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 2.5rem 0 1rem 0;
+            line-height: 1.4;
+        }
+        
+        .about-content .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content .content-section ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .about-content .content-section li {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .about-content .content-section .highlight-box {
+            background: linear-gradient(135deg, rgba(17, 31, 70, 0.1) 0%, rgba(17, 31, 70, 0.05) 100%);
+            border-left: 4px solid #111F46;
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+        }
+        
+        .about-content .content-section .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .value-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-card .value-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .value-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .value-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #111F46 0%, transparent 100%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 60px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #111F46;
+            border-radius: 50%;
+            border: 3px solid var(--bg-card);
+        }
+        
+        .timeline-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-left: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-item p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+        
+        .cta-section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+            text-align: center;
+        }
+        
+        .cta-section .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(17, 31, 70, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(17, 31, 70, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #111F46;
+            border: 2px solid #111F46;
+        }
+        
+        .btn-secondary:hover {
+            background: #111F46;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .about-content .content-section {
+                padding: 2rem;
+            }
+            
+            .about-content .content-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-content .content-section h3 {
+                font-size: 1.4rem;
+            }
+            
+            .about-content .content-section p {
+                font-size: 1rem;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 15px;
+            }
+            
+            .timeline-item {
+                padding-left: 50px;
+            }
+            
+            .timeline-item::before {
+                left: 6px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    
+        /* Final CTA Section */
+        .final-cta {
+            padding: 6rem 0;
+            background: transparent;
+            position: relative;
+        }
+
+        .final-cta .container {
+            position: relative;
+            z-index: 1;
+            max-width: 100%;
+            padding: 0 20px;
+        }
+
+        .final-cta .cta-content {
+            background: rgba(10, 10, 10, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            text-align: center;
+        }
+
+        .final-cta .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .final-cta .cta-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .final-cta .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .final-cta .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(17, 31, 70, 0.3);
+        }
+
+        .final-cta .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(17, 31, 70, 0.4);
+            background: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
+        }
+
+        @media (max-width: 768px) {
+            .final-cta {
+                padding: 4rem 0;
+            }
+            
+            .final-cta .cta-content {
+                padding: 3rem 2rem;
+                border-radius: 20px;
+            }
+            
+            .final-cta .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "headline": "About | PolyProfits",
+        "description": "About PolyProfits—the automated Polymarket bot that wins on your behalf.",
+        "url": "https://polyprofits.co/about.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "PolyProfits",
+            "url": "https://polyprofits.co",
+            "logo": "https://polyprofits.co/assets/images/logos/logo-primary.png",
+            "description": "Fully automated Polymarket bot that wins on your behalf",
+            "foundingDate": "2024",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "US"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "url": "https://polyprofits.co"
+            },
+            "sameAs": [
+                "https://polyprofits.co"
+            ]
+        }
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://polyprofits.co"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About",
+                "item": "https://polyprofits.co/about.html"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Silk Background for all pages -->
+    <div class="page-background">
+        <div id="light-pillar-root" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 0; overflow: hidden; pointer-events: none;"></div>
+    </div>
+    <nav class="navbar nav-traditional">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="assets/images/logos/logo-primary.png" alt="PolyProfits" class="nav-logo-img" loading="eager">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="process">How It Works</a></li>
+                <li><a href="about">About Us</a></li>
+                <li><a href="results">Results</a></li>
+                <li><a href="https://go.polyprofits.co/fb-vsl" class="cta-button" target="_blank" rel="noopener noreferrer">Get Started</a></li>
+            </ul>
+            <button type="button" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>About Us</h1>
+            <p class="hero-subtitle">We built an automated Polymarket bot so you can participate in prediction markets without the manual work. Fill in your story and mission here.</p>
+        </div>
+    </section>
+
+    <!-- Main Content - Placeholder -->
+    <section class="about-content">
+        <div class="container">
+            <div class="content-section" data-aos="fade-up">
+                <h2>Who We Are</h2>
+                <p>PolyProfits is a fully automated Polymarket bot that trades on your behalf. Our goal is to make prediction-market participation hands-off: you set your preferences once, and the system runs 24/7.</p>
+                <p>Placeholder: add your company story, mission, and differentiators when you're ready.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Ready to go automated?</h2>
+                <p>Get in touch and we'll walk you through setup.</p>
+                <div class="cta-buttons">
+                    <a href="https://go.polyprofits.co/fb-vsl" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <span>Get in Touch</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/logos/logo-white.png" alt="PolyProfits" class="footer-logo" loading="lazy">
+                    <p>Automated Polymarket bot that wins on your behalf. Fully automated.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="process">How It Works</a></li>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="results">Results</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="legal/terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PolyProfits. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js?v=1758294251"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+    
+    <script src="light-pillar-bundle.js"></script>
+</body>
+</html> 

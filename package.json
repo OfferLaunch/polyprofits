@@ -1,0 +1,26 @@
+{
+  "name": "polyprofits",
+  "version": "1.0.0",
+  "description": "PolyProfits – Automated Polymarket bot. Fully automated prediction-market trading on your behalf.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:lightpillar": "esbuild light-pillar.js --bundle --format=iife --outfile=light-pillar-bundle.js --jsx=automatic --loader:.css=css",
+    "build:gradient": "esbuild gradient-text.js --bundle --format=iife --outfile=gradient-text-bundle.js --jsx=automatic"
+  },
+  "keywords": ["polyprofits", "polymarket", "prediction-markets", "automation"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.27.2",
+    "shadcn": "^3.6.2"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^9.5.0",
+    "gsap": "^3.14.2",
+    "motion": "^12.23.26",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "three": "^0.182.0"
+  }
+}

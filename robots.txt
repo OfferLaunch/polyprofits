@@ -1,0 +1,6 @@
+# PolyProfits – Automated Polymarket Bot
+User-agent: *
+Allow: /
+
+Sitemap: https://polyprofits.co/sitemap.xml
+Host: https://polyprofits.co

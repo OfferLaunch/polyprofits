@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | PolyProfits</title>
+    <meta name="description" content="How PolyProfits automates Polymarket trading on your behalf. Fully hands-off.">
+    
+    <meta name="theme-color" content="#111F46">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PolyProfits">
+    
+    <meta property="og:title" content="How It Works | PolyProfits">
+    <meta property="og:description" content="How PolyProfits automates Polymarket trading on your behalf.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://polyprofits.co/process">
+    <meta property="og:image" content="https://polyprofits.co/assets/images/placeholders/og-image.svg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/emblems/emblem-blue.png">
+    <link rel="icon" type="image/png" href="assets/images/emblems/emblem-black.png" media="(prefers-color-scheme: light)">
+    <link rel="apple-touch-icon" href="assets/images/emblems/emblem-blue.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css?v=1759850000" as="style">
+    <link rel="preload" href="script.js?v=1759850000" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" as="style" crossorigin>
+    
+    <!-- Critical CSS - Inline for faster rendering -->
+    <style>
+        /* Critical above-the-fold styles */
+        body { font-family: 'Manrope', sans-serif; background: #0a0a0a; color: #FAFBFF; margin: 0; padding: 0; }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .nav-logo-img { height: 40px; width: auto; }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; }
+        .hamburger span { width: 25px; height: 3px; background: #FAFBFF; margin: 3px 0; transition: 0.3s; }
+        @media (max-width: 768px) { .hamburger { display: flex; } }
+    
+        /* Final CTA Section */
+        .final-cta {
+            padding: 6rem 0;
+            background: transparent;
+            position: relative;
+        }
+
+        .final-cta .container {
+            position: relative;
+            z-index: 1;
+            max-width: 100%;
+            padding: 0 20px;
+        }
+
+        .final-cta .cta-content {
+            background: transparent;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            text-align: center;
+        }
+
+        .final-cta .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .final-cta .cta-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .final-cta .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .final-cta .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(17, 31, 70, 0.3);
+        }
+
+        .final-cta .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(17, 31, 70, 0.4);
+            background: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
+        }
+
+        @media (max-width: 768px) {
+            .final-cta {
+                padding: 4rem 0;
+            }
+            
+            .final-cta .cta-content {
+                padding: 3rem 2rem;
+                border-radius: 20px;
+            }
+            
+            .final-cta .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+    
+    <!-- Non-critical CSS - Load asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    
+    <link rel="stylesheet" href="styles.css?v=1759850000">
+    <link rel="stylesheet" href="process-styles.css">
+    <link rel="stylesheet" href="light-pillar-bundle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Silk Background for all pages -->
+    <div class="page-background">
+        <div id="light-pillar-root" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 0; overflow: hidden; pointer-events: none;"></div>
+    </div>
+    <nav class="navbar nav-traditional">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="assets/images/logos/logo-primary.png" alt="PolyProfits" class="nav-logo-img" loading="eager">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="process">How It Works</a></li>
+                <li><a href="about">About Us</a></li>
+                <li><a href="results">Results</a></li>
+                <li><a href="https://go.polyprofits.co/fb-vsl" class="cta-button" target="_blank" rel="noopener noreferrer">Get Started</a></li>
+            </ul>
+            <button type="button" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- Hero Section -->
+    <section class="process-hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>How It Works</h1>
+                <p class="hero-subtitle">PolyProfits runs 24/7 on Polymarket so you don't have to. Here's the framework—fill in your specifics when you're ready.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placeholder: steps / flow -->
+    <section class="grow-steps">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Simple, automated flow</h2>
+                <p>Placeholder: add your steps (e.g. Connect → Configure → Run).</p>
+            </div>
+            <div class="steps-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-header"><div class="step-letter">1</div><h3>Connect</h3></div>
+                    <p>Connect your Polymarket account. We use secure, read-only access where needed.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-header"><div class="step-letter">2</div><h3>Configure</h3></div>
+                    <p>Set your preferences once—risk, markets, limits. No ongoing tweaking required.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-header"><div class="step-letter">3</div><h3>Run</h3></div>
+                    <p>The bot runs automatically. You check results when you want, not because you have to.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Ready to go automated?</h2>
+                <p>Get in touch and we'll walk you through setup.</p>
+                <div class="cta-buttons">
+                    <a href="https://go.polyprofits.co/fb-vsl" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <span>Get in Touch</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/logos/logo-white.png" alt="PolyProfits" class="footer-logo" loading="lazy">
+                    <p>Automated Polymarket bot that wins on your behalf. Fully automated.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="process">How It Works</a></li>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="results">Results</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="legal/terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PolyProfits. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js?v=1759850000"></script>
+    <script src="performance-optimization.js?v=1759850000"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS after a short delay to ensure all elements are rendered
+            setTimeout(function() {
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        duration: 800,
+                        easing: 'ease-in-out',
+                        once: true,
+                        offset: 100
+                    });
+                    console.log('AOS initialized successfully');
+                } else {
+                    console.error('AOS library not loaded');
+                }
+            }, 100);
+        });
+    </script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        // Prevent multiple service worker registrations
+        if ('serviceWorker' in navigator && !window.serviceWorkerRegistered) {
+            window.serviceWorkerRegistered = true;
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js?v=1759850000')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                        // Only check for updates, don't auto-reload
+                        registration.addEventListener('updatefound', function() {
+                            console.log('Service worker update found, but not auto-reloading');
+                        });
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+    
+    <script src="light-pillar-bundle.js"></script>
+</body>
+</html> 

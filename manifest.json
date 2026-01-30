@@ -1,0 +1,30 @@
+{
+    "name": "PolyProfits",
+    "short_name": "PolyProfits",
+    "description": "Automated Polymarket bot that wins on your behalf. Fully automated.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0a0a0a",
+    "theme_color": "#111F46",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "assets/images/emblems/emblem-blue.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/images/emblems/emblem-blue.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/images/emblems/emblem-blue.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["finance", "productivity"],
+    "lang": "en",
+    "dir": "ltr"
+}
