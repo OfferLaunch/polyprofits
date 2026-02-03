@@ -627,7 +627,7 @@ body.menu-open .nav-overlay {
     background-position: 0 0;
 }
 
-/* Small squares match background grid (32px); only those get blue hover (no big boxes) */
+/* Small squares match background grid; blue hover spans full hero width */
 .hero-pillars-wrap {
     position: absolute;
     inset: 0;
@@ -637,13 +637,7 @@ body.menu-open .nav-overlay {
     grid-template-columns: repeat(30, 1fr);
     grid-template-rows: repeat(12, 1fr);
     gap: 0;
-    padding: 24px;
-    align-content: center;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    left: 50%;
-    transform: translateX(-50%);
+    padding: 0;
     width: 100%;
     box-sizing: border-box;
     background: transparent;
