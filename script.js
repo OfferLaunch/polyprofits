@@ -388,7 +388,7 @@ document.querySelectorAll('form').forEach(form => {
     const container = document.getElementById('heroPillars');
     if (!heroSection || !container) return;
 
-    const total = 20 * 10;
+    const total = 30 * 12;
 
     for (let i = 0; i < total; i++) {
         const pillar = document.createElement('div');
@@ -397,7 +397,7 @@ document.querySelectorAll('form').forEach(form => {
     }
 
     const pillars = container.querySelectorAll('.hero-pillar');
-    const radius = 90;
+    const radius = 50;
     let mouseX = -1000;
     let mouseY = -1000;
     let rafId = null;

@@ -627,16 +627,16 @@ body.menu-open .nav-overlay {
     background-position: 0 0;
 }
 
-/* 3D interactive grid – original look; blue pillars follow cursor (PolyProfits blue) */
+/* Small squares match background grid (32px); only those get blue hover (no big boxes) */
 .hero-pillars-wrap {
     position: absolute;
     inset: 0;
     z-index: 0;
     pointer-events: none;
     display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    gap: 2px;
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 0;
     padding: 24px;
     align-content: center;
     justify-content: center;
@@ -646,23 +646,25 @@ body.menu-open .nav-overlay {
     transform: translateX(-50%);
     width: 100%;
     box-sizing: border-box;
+    background: transparent;
 }
+/* Invisible by default; only hero-grid-bg squares show. On hover: that square lights up blue */
 .hero-pillar {
     --rise: 0;
     position: relative;
     width: 100%;
-    min-height: 14px;
-    border-radius: 2px;
+    min-height: 8px;
+    border-radius: 0;
     transform-origin: bottom center;
-    transform: scaleY(calc(1 + var(--rise) * 0.6)) translateZ(0);
+    transform: scaleY(calc(1 + var(--rise) * 0.4)) translateZ(0);
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background 0.2s ease-out;
     will-change: transform;
-    /* Base: original subtle white/light grid. On rise: PolyProfits blue (#111F46) pillar */
-    background: color-mix(in srgb, rgba(255,255,255,0.7) calc((1 - var(--rise)) * 100%), #111F46 calc(var(--rise) * 100%));
-    border: 1px solid rgba(17, 31, 70, 0.06);
+    background: rgba(17, 31, 70, calc(var(--rise) * 0.82));
+    border: none;
+    outline: none;
     box-shadow:
-        0 calc(var(--rise) * 4px) calc(var(--rise) * 12px) rgba(17, 31, 70, 0.25),
-        0 calc(var(--rise) * 2px) calc(var(--rise) * 6px) rgba(17, 31, 70, 0.15);
+        0 calc(var(--rise) * 3px) calc(var(--rise) * 10px) rgba(17, 31, 70, 0.28),
+        0 calc(var(--rise) * 1px) calc(var(--rise) * 4px) rgba(17, 31, 70, 0.18);
 }
 .hero-pillar::before {
     content: '';
@@ -670,15 +672,15 @@ body.menu-open .nav-overlay {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    border-radius: 2px 2px 0 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(17, 31, 70, 0.4));
+    height: 2px;
+    border-radius: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(17, 31, 70, 0.45));
     opacity: var(--rise);
     pointer-events: none;
 }
 @media (max-width: 768px) {
-    .hero-pillars-wrap { gap: 2px; padding: 12px; }
-    .hero-pillar { min-height: 8px; }
+    .hero-pillars-wrap { gap: 0; padding: 12px; }
+    .hero-pillar { min-height: 6px; }
 }
 .light-theme .hero-bg-pattern {
     display: none; /* Use CSS grid instead of WebGL on light hero */
