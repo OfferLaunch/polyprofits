@@ -1,4 +1,4 @@
-const CACHE_NAME = 'polyprofits-v2';
+const CACHE_NAME = 'polyprofits-v3';
 const urlsToCache = [
     '/',
     '/index.html',
