@@ -22,8 +22,34 @@ Modern, minimal website for **PolyProfits** — an automated Polymarket bot that
 
 ## Develop
 
-1. Open `index.html` in a browser, or run a local server (e.g. `npx serve .`).
-2. Rebuild bundles if you change source:
+### Local dev with live reload (if you have Node/npm)
+
+1. In Terminal: `cd` into this project folder, then run `npm install`
+2. Run: `npm run dev`
+3. Your browser should open at **http://localhost:3000** and reload when you save files.
+
+### If "This site can't be reached" or you don't use Node
+
+**Option A – use the start script**
+
+1. Open **Terminal** (or Cursor: **View → Terminal**).
+2. Go to the project folder: `cd /Users/tylerteves/PolyProfits`
+3. Run: `./start-server.sh` (or `bash start-server.sh`)
+4. **Leave that window open.** In your browser, open: **http://localhost:3000**
+5. Stop the server with **Ctrl+C** when you’re done.
+
+**Option B – run Python directly**
+
+1. In Terminal, go to the project folder: `cd /Users/tylerteves/PolyProfits`
+2. Run: `python3 -m http.server 3000`
+3. Leave the window open and open **http://localhost:3000** in your browser.
+
+You won’t get auto-reload—refresh the page (Cmd+R or F5) after you save changes.
+
+### Other options
+
+- Open `index.html` in a browser (double-click the file), or run a static server (e.g. `npx serve .`).
+- Rebuild bundles if you change source:
    - `npm run build:silk`
    - `npm run build:pillnav`
    - `npm run build:gradient`

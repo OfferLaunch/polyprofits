@@ -5,6 +5,7 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "live-server --port=3000 --open=/",
     "build:lightpillar": "esbuild light-pillar.js --bundle --format=iife --outfile=light-pillar-bundle.js --jsx=automatic --loader:.css=css",
     "build:gradient": "esbuild gradient-text.js --bundle --format=iife --outfile=gradient-text-bundle.js --jsx=automatic"
   },
@@ -13,6 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "esbuild": "^0.27.2",
+    "live-server": "^1.2.2",
     "shadcn": "^3.6.2"
   },
   "dependencies": {

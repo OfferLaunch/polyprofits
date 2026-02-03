@@ -627,7 +627,7 @@ body.menu-open .nav-overlay {
     background-position: 0 0;
 }
 
-/* 3D interactive grid - white tiles that rise like pillars on hover */
+/* 3D interactive grid – original look; blue pillars follow cursor (PolyProfits blue) */
 .hero-pillars-wrap {
     position: absolute;
     inset: 0;
@@ -655,13 +655,14 @@ body.menu-open .nav-overlay {
     border-radius: 2px;
     transform-origin: bottom center;
     transform: scaleY(calc(1 + var(--rise) * 0.6)) translateZ(0);
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background 0.2s ease-out;
     will-change: transform;
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    /* Base: original subtle white/light grid. On rise: PolyProfits blue (#111F46) pillar */
+    background: color-mix(in srgb, rgba(255,255,255,0.7) calc((1 - var(--rise)) * 100%), #111F46 calc(var(--rise) * 100%));
+    border: 1px solid rgba(17, 31, 70, 0.06);
     box-shadow:
-        0 calc(var(--rise) * 4px) calc(var(--rise) * 10px) rgba(0, 0, 0, 0.06),
-        0 calc(var(--rise) * 2px) calc(var(--rise) * 4px) rgba(0, 0, 0, 0.04);
+        0 calc(var(--rise) * 4px) calc(var(--rise) * 12px) rgba(17, 31, 70, 0.25),
+        0 calc(var(--rise) * 2px) calc(var(--rise) * 6px) rgba(17, 31, 70, 0.15);
 }
 .hero-pillar::before {
     content: '';
@@ -671,7 +672,7 @@ body.menu-open .nav-overlay {
     right: 0;
     height: 3px;
     border-radius: 2px 2px 0 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(0, 0, 0, 0.03));
+    background: linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(17, 31, 70, 0.4));
     opacity: var(--rise);
     pointer-events: none;
 }
