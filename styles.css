@@ -62,9 +62,9 @@ body {
     --text-secondary: #4a4a5a;
     --text-muted: #6b6b7b;
     --bg-primary: #ffffff;
-    --bg-secondary: #f5f7fa;
-    --bg-tertiary: #eef1f5;
-    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f8f9fa;
+    --bg-card: #ffffff;
     --border-color: rgba(0, 0, 0, 0.08);
     --gradient-primary: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
     --gradient-secondary: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
@@ -160,27 +160,34 @@ body.menu-open {
     opacity: 0.9;
 }
 
-/* Navigation - Light minimal navbar (reference style) */
+/* Navigation - Floating bubble (pill) style */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    padding: 12px 16px 0;
     z-index: 1000;
-    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: none;
+    pointer-events: none;
 }
-
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+.navbar > .nav-container {
+    pointer-events: auto;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    background: #ffffff;
+    border-radius: 9999px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.navbar.scrolled > .nav-container {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 /* Light nav: dark text, blue CTA */
@@ -198,14 +205,15 @@ body.menu-open {
 }
 
 .nav-container {
-    max-width: 1200px;
+    /* Bubble styles moved to .navbar > .nav-container above */
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 72px;
-    gap: 2rem;
+    height: 56px;
+    gap: 1.5rem;
 }
 
 .nav-logo a {
@@ -253,7 +261,7 @@ body.menu-open {
 }
 
 .nav-menu a:not(.cta-button):hover {
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 .nav-menu a:not(.cta-button):hover::after {
@@ -261,7 +269,7 @@ body.menu-open {
 }
 
 .nav-menu a:not(.cta-button).active {
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 .nav-menu a:not(.cta-button).active::after {
@@ -273,7 +281,7 @@ body.menu-open {
     background: var(--primary-color) !important;
     color: #ffffff !important;
     padding: 10px 20px;
-    border-radius: 8px;
+    border-radius: 9999px;
     font-weight: 600;
     font-size: 0.9rem;
     transition: background 0.2s ease, transform 0.2s ease;
@@ -611,8 +619,8 @@ body.menu-open .nav-overlay {
 }
 .hero-light .hero-grid-bg {
     background-image:
-        linear-gradient(rgba(17, 31, 70, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(17, 31, 70, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(17, 31, 70, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17, 31, 70, 0.06) 1px, transparent 1px);
     background-size: 32px 32px;
     background-position: 0 0;
 }
@@ -859,13 +867,13 @@ body.menu-open .nav-overlay {
     margin: 0 auto;
 }
 
-/* Traditional navbar - same light style as nav-light on all pages */
+/* Traditional navbar - floating bubble (no full-width bar) */
 .nav-traditional {
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-color);
+    background: transparent !important;
+    backdrop-filter: none;
+    border-bottom: none !important;
+    box-shadow: none !important;
 }
 
 /* Pillars Section */
@@ -1791,11 +1799,18 @@ body.menu-open .nav-overlay {
         margin: 0 auto;
     }
     
-    /* Mobile Navigation */
-    .nav-container {
-        height: 60px;
-        padding: 0 20px;
+    /* Mobile Navigation - bubble stays pill-shaped with side margin */
+    .navbar {
+        padding: 10px 12px 0;
+    }
+    .navbar > .nav-container {
+        margin: 0 auto;
         max-width: 100%;
+        border-radius: 9999px;
+    }
+    .nav-container {
+        height: 52px;
+        padding: 0 16px;
         overflow-x: hidden;
         display: flex;
         justify-content: space-between;
@@ -1803,7 +1818,7 @@ body.menu-open .nav-overlay {
     }
     
     body {
-        padding-top: 60px;
+        padding-top: 72px;
     }
     
     .nav-logo-img {
