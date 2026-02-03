@@ -382,5 +382,57 @@ document.querySelectorAll('form').forEach(form => {
     });
 });
 
+// Hero 3D pillars – mouse-follow rise effect (home page only)
+(function initHeroPillars() {
+    const heroSection = document.getElementById('heroSection');
+    const container = document.getElementById('heroPillars');
+    if (!heroSection || !container) return;
+
+    const total = 20 * 10;
+
+    for (let i = 0; i < total; i++) {
+        const pillar = document.createElement('div');
+        pillar.className = 'hero-pillar';
+        container.appendChild(pillar);
+    }
+
+    const pillars = container.querySelectorAll('.hero-pillar');
+    const radius = 90;
+    let mouseX = -1000;
+    let mouseY = -1000;
+    let rafId = null;
+
+    function updatePillars() {
+        const heroRect = heroSection.getBoundingClientRect();
+        pillars.forEach(function(pillar) {
+            const r = pillar.getBoundingClientRect();
+            const cx = r.left + r.width / 2;
+            const cy = r.top + r.height / 2;
+            const dx = mouseX - cx;
+            const dy = mouseY - cy;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            const rise = dist < radius ? Math.max(0, 1 - dist / radius) : 0;
+            pillar.style.setProperty('--rise', rise);
+        });
+        rafId = null;
+    }
+
+    function scheduleUpdate() {
+        if (rafId === null) rafId = requestAnimationFrame(updatePillars);
+    }
+
+    heroSection.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        scheduleUpdate();
+    });
+
+    heroSection.addEventListener('mouseleave', function() {
+        mouseX = -1000;
+        mouseY = -1000;
+        scheduleUpdate();
+    });
+})();
+
 // PolyProfits
 

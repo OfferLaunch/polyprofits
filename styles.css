@@ -616,6 +616,8 @@ body.menu-open .nav-overlay {
     min-height: auto;
     padding: 4rem 0 5rem;
     background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
 }
 .hero-light .hero-grid-bg {
     background-image:
@@ -623,6 +625,57 @@ body.menu-open .nav-overlay {
         linear-gradient(90deg, rgba(17, 31, 70, 0.06) 1px, transparent 1px);
     background-size: 32px 32px;
     background-position: 0 0;
+}
+
+/* 3D interactive pillars - grid behind hero content */
+.hero-pillars-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 3px;
+    padding: 24px;
+    align-content: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    box-sizing: border-box;
+}
+.hero-pillar {
+    --rise: 0;
+    position: relative;
+    width: 100%;
+    min-height: 14px;
+    border-radius: 4px;
+    transform-origin: bottom center;
+    transform: scaleY(calc(1 + var(--rise) * 0.7)) translateZ(0);
+    transition: transform 0.22s ease-out;
+    will-change: transform;
+    background: linear-gradient(to top, rgba(17, 31, 70, 0.2), rgba(17, 31, 70, 0.06));
+    box-shadow:
+        0 -1px 3px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.hero-pillar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 2px 2px 0 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.25), rgba(17, 31, 70, 0.1));
+    pointer-events: none;
+}
+@media (max-width: 768px) {
+    .hero-pillars-wrap { gap: 2px; padding: 12px; }
+    .hero-pillar { min-height: 8px; }
 }
 .light-theme .hero-bg-pattern {
     display: none; /* Use CSS grid instead of WebGL on light hero */
