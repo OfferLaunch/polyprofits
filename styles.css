@@ -1075,8 +1075,8 @@ body.menu-open .nav-overlay {
     background: var(--bg-secondary);
     position: relative;
     z-index: 2;
-    opacity: 0.98;
-    transform: translateY(8px);
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -1209,8 +1209,8 @@ body.menu-open .nav-overlay {
     scroll-margin-top: 100px;
     max-width: 720px;
     margin-bottom: 2.5rem;
-    opacity: 0;
-    transform: translateY(24px);
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
@@ -2213,7 +2213,9 @@ body.menu-open .nav-overlay {
 }
 
 .compare-row {
-    display: contents;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
 }
 
 .compare-row.compare-header .compare-cell {
@@ -4015,4 +4017,26 @@ body.menu-open .nav-overlay {
         height: 35px;
         margin-right: 10px;
     }
+}
+
+/* Force white text on all CTA buttons site-wide */
+a.cta-button,
+a.btn-primary,
+a.hero-cta,
+a.cta-main-btn,
+.btn-primary,
+.cta-button {
+    color: #ffffff !important;
+}
+a.cta-button span,
+a.cta-button i,
+a.btn-primary span,
+a.btn-primary i,
+a.hero-cta span,
+a.hero-cta i,
+a.cta-main-btn span,
+a.cta-main-btn i,
+.btn-primary span,
+.btn-primary i {
+    color: #ffffff !important;
 } 
