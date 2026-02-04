@@ -38,7 +38,22 @@ function setActiveNavigation() {
 // Set active navigation on page load
 document.addEventListener('DOMContentLoaded', function() {
     setActiveNavigation();
+    initFaqAccordion();
 });
+
+// FAQ accordion: click question to expand/collapse answer
+function initFaqAccordion() {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach(function(item) {
+        const btn = item.querySelector('.faq-question');
+        if (!btn) return;
+        btn.addEventListener('click', function() {
+            const isOpen = item.classList.contains('is-open');
+            item.classList.toggle('is-open', !isOpen);
+            btn.setAttribute('aria-expanded', !isOpen);
+        });
+    });
+}
 
 // Mobile Menu Toggle (Transcend-style: overlay + slide panel)
 function closeMobileMenu() {

@@ -22,6 +22,8 @@ Modern, minimal website for **PolyProfits** — an automated Polymarket bot that
 
 ## Develop
 
+**Workflow:** Run a local server → edit HTML/CSS/JS → see changes in the browser (refresh or use live reload) → when you’re happy, push to GitHub.
+
 ### Local dev with live reload (if you have Node/npm)
 
 1. In Terminal: `cd` into this project folder, then run `npm install`

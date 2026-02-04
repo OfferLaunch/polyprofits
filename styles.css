@@ -128,6 +128,25 @@ body.menu-open {
     transform: scale(1.05);
 }
 
+.nav-logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: var(--primary-color);
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-logo-link:hover .nav-logo-text {
+    color: var(--primary-dark);
+}
+
 .footer-logo {
     height: 50px;
     width: auto;
@@ -138,6 +157,33 @@ body.menu-open {
 
 .footer-logo:hover {
     opacity: 1;
+}
+
+.footer-logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.footer-logo-text {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: var(--primary-color);
+    transition: color 0.2s ease;
+}
+
+.footer-logo-link:hover .footer-logo-text {
+    color: var(--primary-dark);
+}
+
+.footer-logo-text--white {
+    color: #ffffff;
+}
+
+.footer-logo-link:hover .footer-logo-text--white {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .footer-brand {
@@ -1072,7 +1118,7 @@ body.menu-open .nav-overlay {
 /* ========== The PolyProfits System Section (DM-style, tailored) ========== */
 .system-section {
     padding: 5rem 0 6rem;
-    background: var(--bg-secondary);
+    background: linear-gradient(180deg, #E0E8FF 0%, #F0F4FF 40%, #ffffff 100%);
     position: relative;
     z-index: 2;
     opacity: 1;
@@ -2167,7 +2213,7 @@ body.menu-open .nav-overlay {
 /* ========== Comparison table – Traditional vs PolyProfits (stacked, light) ========== */
 .compare-section {
     padding: 4.5rem 0 5.5rem;
-    background: var(--bg-secondary);
+    background: linear-gradient(180deg, #E0E8FF 0%, #F0F4FF 40%, #ffffff 100%);
     position: relative;
     z-index: 2;
 }
@@ -2468,6 +2514,248 @@ body.menu-open .nav-overlay {
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+/* ========== Meet The Founders ========== */
+.founders-section {
+    padding: 4.5rem 0 5rem;
+    background: #f5f6f8;
+    position: relative;
+    z-index: 2;
+}
+
+.founders-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.founders-heading {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: #1a1a2e;
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
+}
+
+.founder-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.founder-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Row 2: text left, image right (HTML order is content then image) */
+
+.founder-image-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(62, 58, 241, 0.06);
+    aspect-ratio: 480 / 560;
+}
+
+.founder-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.founder-content {
+    padding: 0 0.5rem;
+}
+
+.founder-name {
+    font-size: clamp(1.35rem, 2.5vw, 1.6rem);
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
+}
+
+.founder-title {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.founder-bio {
+    margin-bottom: 1.5rem;
+}
+
+.founder-bio p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #1a1a2e;
+    margin: 0 0 1rem;
+}
+
+.founder-bio p:last-child {
+    margin-bottom: 0;
+}
+
+.founder-socials {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.founder-social-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.founder-social-link:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+    .founder-row,
+    .founder-row--image-right {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .founder-row--image-right .founder-content,
+    .founder-row--image-right .founder-image-wrap {
+        direction: ltr;
+    }
+
+    .founder-row--image-right .founder-image-wrap {
+        order: 1;
+    }
+
+    .founder-row--image-right .founder-content {
+        order: 2;
+    }
+
+    .founder-image-wrap {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .founder-content {
+        text-align: left;
+    }
+}
+
+/* ========== FAQ (accordion) ========== */
+.faq-section {
+    padding: 4.5rem 0 5rem;
+    background: #ffffff;
+    position: relative;
+    z-index: 2;
+}
+
+.faq-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.faq-heading {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: #1a1a2e;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.02em;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.faq-item {
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    background: #ffffff;
+}
+
+.faq-item:last-child {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-item:first-child {
+    border-radius: 12px 12px 0 0;
+}
+
+.faq-item:last-child {
+    border-radius: 0 0 12px 12px;
+}
+
+.faq-item:only-child {
+    border-radius: 12px;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.faq-question:hover {
+    background: rgba(62, 58, 241, 0.06);
+}
+
+.faq-question:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.faq-icon {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    transition: transform 0.25s ease;
+}
+
+.faq-item.is-open .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item.is-open .faq-answer {
+    max-height: 500px;
+}
+
+.faq-answer p {
+    margin: 0;
+    padding: 0 1.5rem 1.25rem;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
 }
 
 .compare-column-old {
@@ -2841,6 +3129,14 @@ body.menu-open .nav-overlay {
     display: block;
     height: 48px;
     width: auto;
+}
+
+.policy-page-logo-text {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: #ffffff;
     margin: 0 auto 1.5rem;
     opacity: 0.95;
 }
