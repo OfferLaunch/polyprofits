@@ -105,6 +105,18 @@ body.menu-open {
     padding: 0 20px;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* Logo Styles */
 .nav-logo-img {
     height: 40px;
@@ -995,6 +1007,64 @@ body.menu-open .nav-overlay {
     margin: 0;
 }
 
+/* ========== Key Figures (DM-style stats strip) ========== */
+.key-figures {
+    padding: 3.5rem 0;
+    background: var(--bg-secondary);
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.key-figures-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.key-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.key-figure-value {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--primary-color);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.key-figure-label {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    max-width: 12em;
+}
+
+@media (max-width: 900px) {
+    .key-figures-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .key-figures {
+        padding: 2.5rem 0;
+    }
+    .key-figures-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+}
+
 /* ========== The PolyProfits System Section (DM-style, tailored) ========== */
 .system-section {
     padding: 5rem 0 6rem;
@@ -1419,9 +1489,46 @@ body.menu-open .nav-overlay {
     }
 }
 
-/* Home page – readability (clean, modern, easy to read for 50+) */
+/* Home page – headlines like About Us blue, body text black */
 .home-page {
     font-size: 1.0625rem; /* 17px base */
+    color: #1a1a2e;
+}
+
+.home-page .hero-title,
+.home-page .hero-title .hero-title-accent,
+.home-page .system-header h2,
+.home-page .system-card-label,
+.home-page .system-card-title,
+.home-page .system-benefit strong,
+.home-page .system-badge,
+.home-page .cta-badge,
+.home-page .cta-content h2 {
+    color: #5959FF;
+}
+
+.home-page .section-header h2 {
+    color: #5959FF;
+}
+
+.home-page .key-figure-value {
+    color: #5959FF;
+}
+.home-page .key-figure-label {
+    color: #1a1a2e;
+}
+
+.home-page .hero-subtitle,
+.home-page .system-subtitle,
+.home-page .system-card-desc,
+.home-page .system-benefit span,
+.home-page .cta-content p,
+.home-page .footer-section p {
+    color: #1a1a2e;
+}
+
+.home-page .section-header p {
+    color: #1a1a2e;
 }
 
 .home-page .hero {
@@ -1439,14 +1546,14 @@ body.menu-open .nav-overlay {
     font-weight: 700;
     line-height: 1.25;
     margin-bottom: 1.25rem;
-    color: var(--text-primary);
+    color: #5959FF;
     letter-spacing: -0.02em;
 }
 
 .home-page .hero-subtitle {
     font-size: 1.25rem;
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: #1a1a2e;
     margin-bottom: 2rem;
     max-width: 36em;
     margin-left: auto;
@@ -1467,13 +1574,13 @@ body.menu-open .nav-overlay {
     font-size: clamp(1.75rem, 4vw, 2.25rem);
     font-weight: 700;
     margin-bottom: 0.75rem;
-    color: var(--text-primary);
+    color: #5959FF;
 }
 
 .home-page .section-header p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: var(--text-secondary);
+    color: #1a1a2e;
     max-width: 32em;
 }
 
@@ -1493,13 +1600,13 @@ body.menu-open .nav-overlay {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-primary);
+    color: #5959FF;
 }
 
 .home-page .pillar-content p {
     font-size: 1.15rem;
     line-height: 1.7;
-    color: var(--text-secondary);
+    color: #1a1a2e;
 }
 
 .home-page .pillar-number-large {
@@ -1516,10 +1623,12 @@ body.menu-open .nav-overlay {
     font-size: clamp(1.5rem, 3.5vw, 2rem);
     font-weight: 700;
     margin-bottom: 0.75rem;
+    color: #5959FF;
 }
 
 .home-page .cta-content p {
     font-size: 1.2rem;
+    color: #1a1a2e;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -1981,6 +2090,16 @@ body.menu-open .nav-overlay {
     width: 100%;
 }
 
+.cta-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
 .cta-content h2 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -2000,6 +2119,12 @@ body.menu-open .nav-overlay {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.cta-main-btn {
+    padding: 18px 36px !important;
+    font-size: 1.1rem !important;
+    border-radius: 9999px;
 }
 
 /* Responsive adjustments for glass CTA */
