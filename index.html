@@ -101,34 +101,147 @@
         </div>
     </section>
 
-    <section class="pillars" aria-labelledby="why-heading">
+    <section class="system-section" id="polyprofits-system" aria-labelledby="system-heading">
         <div class="container">
-            <div class="section-header">
-                <h2 id="why-heading">Why PolyProfits</h2>
-                <p>Three reasons to let the bot handle your Polymarket activity.</p>
+            <div class="system-header">
+                <span class="system-badge">• AUTOMATED</span>
+                <h2 id="system-heading">The PolyProfits System</h2>
+                <p class="system-subtitle">One setup. We run it 24/7. No screens to watch, no decisions to make.</p>
             </div>
-            <div class="pillars-layout">
-                <div class="pillar-row">
-                    <div class="pillar-number-large" aria-hidden="true">1</div>
-                    <div class="pillar-content">
-                        <h3>Fully automated</h3>
-                        <p>The bot runs around the clock on Polymarket. You don’t watch the markets or place trades yourself.</p>
+            <div class="system-phase-nav" role="tablist" aria-label="System phases">
+                <button type="button" class="system-phase-tab active" role="tab" aria-selected="true" aria-controls="phase-setup" id="tab-setup" data-phase="setup">
+                    <i class="fas fa-cog" aria-hidden="true"></i>
+                    <span>Setup</span>
+                </button>
+                <span class="system-phase-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                <button type="button" class="system-phase-tab" role="tab" aria-selected="false" aria-controls="phase-run" id="tab-run" data-phase="run">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                    <span>We Run It</span>
+                </button>
+                <span class="system-phase-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                <button type="button" class="system-phase-tab" role="tab" aria-selected="false" aria-controls="phase-hands-off" id="tab-hands-off" data-phase="hands-off">
+                    <i class="fas fa-hand-paper" aria-hidden="true"></i>
+                    <span>Hands-Off</span>
+                </button>
+            </div>
+            <div class="system-cards">
+                <article class="system-card active" id="phase-setup" role="tabpanel" aria-labelledby="tab-setup">
+                    <div class="system-card-inner">
+                        <div class="system-card-content">
+                            <span class="system-card-label">SETUP</span>
+                            <h3 class="system-card-title">Configure Once</h3>
+                            <p class="system-card-desc">Tell us your preferences and risk level. We structure everything so the bot can run autonomously on Polymarket—no ongoing input from you.</p>
+                            <div class="system-benefits">
+                                <div class="system-benefit">
+                                    <span class="system-benefit-icon"><i class="fas fa-sliders-h" aria-hidden="true"></i></span>
+                                    <div>
+                                        <strong>Simple onboarding</strong>
+                                        <span>One-time setup; we handle the technical side.</span>
+                                    </div>
+                                </div>
+                                <div class="system-benefit">
+                                    <span class="system-benefit-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></span>
+                                    <div>
+                                        <strong>You stay in control</strong>
+                                        <span>Set your parameters; the system runs within them.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="system-card-visual" data-interactive>
+                            <div class="system-visual-orb">
+                                <div class="system-visual-core"></div>
+                                <div class="system-visual-ring system-visual-ring-1"></div>
+                                <div class="system-visual-ring system-visual-ring-2"></div>
+                                <div class="system-visual-node" style="--i: 0"></div>
+                                <div class="system-visual-node" style="--i: 1"></div>
+                                <div class="system-visual-node" style="--i: 2"></div>
+                                <div class="system-visual-node" style="--i: 3"></div>
+                                <div class="system-visual-node" style="--i: 4"></div>
+                                <div class="system-visual-node" style="--i: 5"></div>
+                            </div>
+                            <span class="system-visual-label">One-time config</span>
+                        </div>
                     </div>
-                </div>
-                <div class="pillar-row">
-                    <div class="pillar-number-large" aria-hidden="true">2</div>
-                    <div class="pillar-content">
-                        <h3>Designed to perform</h3>
-                        <p>Strategy and execution are built to take advantage of prediction markets on your behalf.</p>
+                </article>
+                <article class="system-card" id="phase-run" role="tabpanel" aria-labelledby="tab-run" hidden>
+                    <div class="system-card-inner">
+                        <div class="system-card-content">
+                            <span class="system-card-label">WE RUN IT</span>
+                            <h3 class="system-card-title">24/7 Automated Trading</h3>
+                            <p class="system-card-desc">The bot operates around the clock on Polymarket. Strategy and execution are built to participate in prediction markets on your behalf—no need to watch or place trades yourself.</p>
+                            <div class="system-benefits">
+                                <div class="system-benefit">
+                                    <span class="system-benefit-icon"><i class="fas fa-robot" aria-hidden="true"></i></span>
+                                    <div>
+                                        <strong>Fully automated</strong>
+                                        <span>Runs continuously; no manual intervention.</span>
+                                    </div>
+                                </div>
+                                <div class="system-benefit">
+                                    <span class="system-benefit-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></span>
+                                    <div>
+                                        <strong>Designed to perform</strong>
+                                        <span>Built to take advantage of prediction markets for you.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="system-card-visual" data-interactive>
+                            <div class="system-visual-orb system-visual-orb--pulse">
+                                <div class="system-visual-core system-visual-core--glow"></div>
+                                <div class="system-visual-ring system-visual-ring-1"></div>
+                                <div class="system-visual-ring system-visual-ring-2"></div>
+                                <div class="system-visual-node system-visual-node--active" style="--i: 0"></div>
+                                <div class="system-visual-node system-visual-node--active" style="--i: 1"></div>
+                                <div class="system-visual-node system-visual-node--active" style="--i: 2"></div>
+                                <div class="system-visual-node system-visual-node--active" style="--i: 3"></div>
+                                <div class="system-visual-node system-visual-node--active" style="--i: 4"></div>
+                                <div class="system-visual-node system-visual-node--active" style="--i: 5"></div>
+                            </div>
+                            <span class="system-visual-label">Always on</span>
+                        </div>
                     </div>
-                </div>
-                <div class="pillar-row">
-                    <div class="pillar-number-large" aria-hidden="true">3</div>
-                    <div class="pillar-content">
-                        <h3>Truly hands-off</h3>
-                        <p>Set your preferences once. After that, we handle everything—no daily check-ins or manual choices.</p>
+                </article>
+                <article class="system-card" id="phase-hands-off" role="tabpanel" aria-labelledby="tab-hands-off" hidden>
+                    <div class="system-card-inner">
+                        <div class="system-card-content">
+                            <span class="system-card-label">HANDS-OFF</span>
+                            <h3 class="system-card-title">Set It and Forget It</h3>
+                            <p class="system-card-desc">After setup, we handle everything. No daily check-ins, no watchlists, no second-guessing—just a truly hands-off way to participate in prediction markets.</p>
+                            <div class="system-benefits">
+                                <div class="system-benefit">
+                                    <span class="system-benefit-icon"><i class="fas fa-calendar-check" aria-hidden="true"></i></span>
+                                    <div>
+                                        <strong>No daily decisions</strong>
+                                        <span>Set preferences once; the system does the rest.</span>
+                                    </div>
+                                </div>
+                                <div class="system-benefit">
+                                    <span class="system-benefit-icon"><i class="fas fa-couch" aria-hidden="true"></i></span>
+                                    <div>
+                                        <strong>Truly hands-off</strong>
+                                        <span>No screens to watch; we run it so you don't have to.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="system-card-visual" data-interactive>
+                            <div class="system-visual-orb">
+                                <div class="system-visual-core system-visual-core--quiet"></div>
+                                <div class="system-visual-ring system-visual-ring-1"></div>
+                                <div class="system-visual-ring system-visual-ring-2"></div>
+                                <div class="system-visual-node" style="--i: 0"></div>
+                                <div class="system-visual-node" style="--i: 1"></div>
+                                <div class="system-visual-node" style="--i: 2"></div>
+                                <div class="system-visual-node" style="--i: 3"></div>
+                                <div class="system-visual-node" style="--i: 4"></div>
+                                <div class="system-visual-node" style="--i: 5"></div>
+                            </div>
+                            <span class="system-visual-label">You relax</span>
+                        </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
