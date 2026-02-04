@@ -84,7 +84,7 @@
     border: none;
     background: linear-gradient(135deg, rgba(17, 31, 70, 0.08) 0%, rgba(17, 31, 70, 0.03) 100%);
     border-radius: 20px;
-    border-left: 4px solid #111F46;
+    border-left: 4px solid #3E3AF1;
 }
 
 .why-content blockquote::before {
@@ -93,7 +93,7 @@
     top: -10px;
     left: 30px;
     font-size: 4rem;
-    color: #111F46;
+    color: #3E3AF1;
     font-family: serif;
     line-height: 1;
 }
@@ -114,7 +114,7 @@
 
 .why-content blockquote cite {
     font-size: 1.2rem;
-    color: #111F46;
+    color: #3E3AF1;
     font-weight: 600;
     font-style: normal;
     display: block;
@@ -167,7 +167,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #111F46 0%, #0d1838 100%);
+    background: linear-gradient(90deg, #3E3AF1 0%, #3229d4 100%);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -192,7 +192,7 @@
 .step-letter {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
+    background: linear-gradient(135deg, #3E3AF1 0%, #3229d4 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -249,7 +249,7 @@
 }
 
 .step-bullets i {
-    color: #111F46;
+    color: #3E3AF1;
     font-size: 0.9rem;
     margin-top: 0.1rem;
     flex-shrink: 0;
@@ -260,7 +260,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #111F46;
+    color: #3E3AF1;
     font-size: 1.5rem;
     animation: pulse 2s infinite;
     padding: 0 0.5rem;
@@ -310,7 +310,7 @@
 .benefit-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
+    background: linear-gradient(135deg, #3E3AF1 0%, #3229d4 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -364,7 +364,7 @@
 
 .process-cta .cta-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
+    background: linear-gradient(135deg, #3E3AF1 0%, #3229d4 100%);
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
@@ -376,7 +376,7 @@
 }
 
 .process-cta .highlight {
-    color: #111F46;
+    color: #3E3AF1;
     font-weight: 800;
 }
 
@@ -388,7 +388,7 @@
 
 .process-cta .cta-subtext-container {
     background: rgba(17, 31, 70, 0.05);
-    border-left: 3px solid #111F46;
+    border-left: 3px solid #3E3AF1;
     padding: 1.5rem 2rem;
     border-radius: 0 8px 8px 0;
     margin-bottom: 3rem;
@@ -419,7 +419,7 @@
     padding: 18px 36px;
     font-size: 1.1rem;
     font-weight: 600;
-    background: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
+    background: linear-gradient(135deg, #3E3AF1 0%, #3229d4 100%);
     border: none;
     border-radius: 10px;
     color: white;
@@ -434,7 +434,7 @@
 .process-cta .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(17, 31, 70, 0.35);
-    background: linear-gradient(135deg, #111F46 0%, #0d1838 100%);
+    background: linear-gradient(135deg, #3E3AF1 0%, #3229d4 100%);
 }
 
 .cta-subtext {

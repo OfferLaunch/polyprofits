@@ -24,8 +24,8 @@ function initLightPillar() {
         'div',
         { style: { width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 } },
         React.createElement(LightPillar, {
-          topColor: '#111F46',
-          bottomColor: '#0d1838',
+          topColor: '#3E3AF1',
+          bottomColor: '#3229d4',
           intensity: 0.9,
           rotationSpeed: 0.1,
           glowAmount: 0.002,

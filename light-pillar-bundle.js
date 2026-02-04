@@ -47537,8 +47537,8 @@ void main() {
   // components/LightPillar/LightPillar.jsx
   var import_jsx_runtime = __toESM(require_jsx_runtime());
   var LightPillar = ({
-    topColor = "#111F46",
-    bottomColor = "#0d1838",
+    topColor = "#3E3AF1",
+    bottomColor = "#3229d4",
     intensity = 1,
     rotationSpeed = 0.3,
     interactive = false,
@@ -47852,8 +47852,8 @@ void main() {
           "div",
           { style: { width: "100%", height: "100%", position: "absolute", top: 0, left: 0 } },
           import_react2.default.createElement(LightPillar_default, {
-            topColor: "#111F46",
-            bottomColor: "#0d1838",
+            topColor: "#3E3AF1",
+            bottomColor: "#3229d4",
             intensity: 0.9,
             rotationSpeed: 0.1,
             glowAmount: 2e-3,
