@@ -10,14 +10,14 @@ When the user says **"push to github"**, **"push to GitHub"**, **"push"** (in th
 1. **Stage changes**: Run `git add -A` (or `git add` for modified files).
 2. **Check status**: Run `git status`. If working tree is clean and already pushed, say so and stop.
 3. **Commit if needed**: If there are staged changes, run `git commit` with a short, descriptive message (e.g. summarize the changes). If the user already described what changed, use that; otherwise infer from `git status`/diff.
-4. **Push**: Run `git push origin main` (request network permission).
-5. **If push fails** with `could not read Username` / `Device not configured` / authentication:
-   - Tell the user the push must run in **their** terminal (View → Terminal, or Ctrl+` / Cmd+`).
-   - Give them this one-liner:  
+4. **Push** (request network permission):
+   - **If a `.env` file exists in the project root:** In the same shell, load it then push with token:  
+     `cd <project-root> && ([ -f .env ] && set -a && . ./.env && set +a); git push https://${GITHUB_TOKEN}@github.com/OfferLaunch/polyprofits.git main`  
+     (Use the project root path, e.g. /Users/tylerteves/PolyProfits.)
+   - **Else:** Run `git push origin main`.
+   - **If push fails** with `could not read Username` / `Device not configured` / authentication: tell the user to set up automatic push (see below) and give the one-liner:  
      `cd /Users/tylerteves/PolyProfits && git push origin main`
 
 Do not ask "do you want me to push?" when they clearly said to push—just run the workflow.
 
-**Optional (full automation):** If the user has set `GITHUB_TOKEN` or `GH_TOKEN` in their environment (e.g. Cursor env or a local `.env` that is gitignored), the agent can run:  
-`git push https://$GITHUB_TOKEN@github.com/OfferLaunch/polyprofits.git main`  
-so that push succeeds from the chat. Do not store tokens in the repo or in committed files.
+**Automatic push from chat:** User creates a `.env` in the project root (gitignored) with `GITHUB_TOKEN=ghp_...` (GitHub Personal Access Token, classic, `repo` scope). The agent will use it for the push URL so push succeeds without opening the terminal. Never commit `.env` or put the token in tracked files. See `.env.example`.

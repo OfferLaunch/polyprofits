@@ -143,13 +143,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }, { threshold: 0.25, rootMargin: '-80px 0px -40% 0px' });
     cards.forEach(function(card) { scrollObserver.observe(card); });
 
-    // Scroll reveal: add class when section enters view for subtle entrance
+    // Section entrance: add system-visible when section enters view
     const sectionObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) section.classList.add('system-visible');
-        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-    });
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     sectionObserver.observe(section);
+
+    // Card scroll reveal: add system-card-visible when each card enters view
+    const cardRevealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) entry.target.classList.add('system-card-visible');
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    cards.forEach(function(card) { cardRevealObserver.observe(card); });
 })();
 
 // Form handling
