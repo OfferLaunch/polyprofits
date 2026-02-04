@@ -104,7 +104,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ========== The PolyProfits System section: phase tabs + scroll/hover interactivity ==========
+// ========== The PolyProfits System section: scroll-to-section tabs + path layout ==========
 (function initPolyProfitsSystem() {
     const section = document.getElementById('polyprofits-system');
     if (!section) return;
@@ -113,36 +113,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const cards = section.querySelectorAll('.system-card');
     const phaseIds = ['setup', 'run', 'hands-off'];
 
-    function setPhase(phase) {
-        const index = phaseIds.indexOf(phase);
-        if (index === -1) return;
+    function setActiveTab(index) {
         tabs.forEach(function(t, i) {
             const isActive = i === index;
             t.classList.toggle('active', isActive);
             t.setAttribute('aria-selected', isActive);
         });
-        cards.forEach(function(card, i) {
-            const isActive = i === index;
-            card.classList.toggle('active', isActive);
-            card.hidden = !isActive;
-        });
     }
 
+    // Tab click: smooth scroll to that section
     tabs.forEach(function(tab, i) {
         tab.addEventListener('click', function() {
-            setPhase(phaseIds[i]);
+            const target = cards[i];
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setActiveTab(i);
+            }
         });
     });
 
-    // Scroll reveal: add class when section enters view for subtle entrance
-    const observer = new IntersectionObserver(function(entries) {
+    // Which section is in view → update active tab
+    const scrollObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                section.classList.add('system-visible');
-            }
+            if (!entry.isIntersecting) return;
+            const card = entry.target;
+            const index = Array.prototype.indexOf.call(cards, card);
+            if (index !== -1) setActiveTab(index);
+        });
+    }, { threshold: 0.25, rootMargin: '-80px 0px -40% 0px' });
+    cards.forEach(function(card) { scrollObserver.observe(card); });
+
+    // Scroll reveal: add class when section enters view for subtle entrance
+    const sectionObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) section.classList.add('system-visible');
         }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
     });
-    observer.observe(section);
+    sectionObserver.observe(section);
 })();
 
 // Form handling
