@@ -1288,9 +1288,9 @@ body.menu-open .nav-overlay {
 }
 
 .system-visual-core {
-    width: 80px;
-    height: 80px;
-    border-radius: 18px;
+    width: 96px;
+    height: 96px;
+    border-radius: 0;
     object-fit: contain;
     box-shadow: 0 8px 24px rgba(17, 31, 70, 0.25);
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
@@ -1307,25 +1307,6 @@ body.menu-open .nav-overlay {
 
 .system-visual-core--quiet {
     opacity: 0.9;
-}
-
-.system-visual-ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    border: 2px solid rgba(17, 31, 70, 0.15);
-    animation: systemRingRotate 20s linear infinite;
-}
-
-.system-visual-ring-2 {
-    inset: 20px;
-    animation-duration: 25s;
-    animation-direction: reverse;
-}
-
-@keyframes systemRingRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
 }
 
 .system-visual-node {
