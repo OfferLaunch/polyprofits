@@ -11,9 +11,9 @@ When the user says **"push to github"**, **"push to GitHub"**, **"push"** (in th
 2. **Check status**: Run `git status`. If working tree is clean and already pushed, say so and stop.
 3. **Commit if needed**: If there are staged changes, run `git commit` with a short, descriptive message (e.g. summarize the changes). If the user already described what changed, use that; otherwise infer from `git status`/diff.
 4. **Push** (request network permission):
-   - **If a `.env` file exists in the project root:** In the same shell, load it then push with token:  
-     `cd <project-root> && ([ -f .env ] && set -a && . ./.env && set +a); git push https://${GITHUB_TOKEN}@github.com/OfferLaunch/polyprofits.git main`  
-     (Use the project root path, e.g. /Users/tylerteves/PolyProfits.)
+   - **If a `.env` file exists in the project root:** In the same shell (no subshell), load it then push:  
+     `cd /Users/tylerteves/PolyProfits && [ -f .env ] && set -a && . ./.env && set +a && git push https://${GITHUB_TOKEN}@github.com/OfferLaunch/polyprofits.git main`  
+     (Must be one shell: no parentheses around the source, so GITHUB_TOKEN is visible to git push.)
    - **Else:** Run `git push origin main`.
    - **If push fails** with `could not read Username` / `Device not configured` / authentication: tell the user to set up automatic push (see below) and give the one-liner:  
      `cd /Users/tylerteves/PolyProfits && git push origin main`
