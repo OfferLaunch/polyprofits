@@ -1646,6 +1646,11 @@ body.menu-open .nav-overlay {
     font-size: 1.05rem;
     padding: 14px 28px;
 }
+.home-page .btn-primary,
+.home-page .btn-primary span,
+.home-page .btn-primary i {
+    color: #ffffff !important;
+}
 
 .home-page .footer-section p {
     font-size: 1rem;
@@ -2155,9 +2160,10 @@ body.menu-open .nav-overlay {
 /* ========== Then vs Now comparison section ========== */
 .then-now {
     padding: 4.5rem 0 5rem;
-    background: var(--bg-tertiary);
+    background: #f0f0f8;
     position: relative;
     z-index: 2;
+    min-height: 320px;
 }
 
 .then-now-header {
