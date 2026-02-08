@@ -27,7 +27,7 @@ Clean layout for building out the site.
 - **components/** – React sources for bundles:
   - **LightPillar/** – Background effect (`npm run build:lightpillar`)
   - **GradientText/** – Hero gradient text (`npm run build:gradient`)
-- **legal/** – `privacy-policy.html`, `terms-of-service.html`
+- **legal/** – `privacy-policy/index.html`, `terms-of-service/index.html` (clean URLs: /legal/privacy-policy/, /legal/terms-of-service/)
 - **docs/** – Project notes (this file)
 
 ## Build
