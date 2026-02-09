@@ -50,25 +50,25 @@ body {
     background: var(--primary-light);
 }
 
-/* CSS Variables for Brand Colors - PolyProfits logo blue #3E3AF1 */
+/* CSS Variables for Brand Colors - Navy to match PolyProfits logo */
 :root {
-    --primary-color: #3E3AF1;
-    --primary-dark: #3229d4;
-    --primary-light: #5854f3;
-    --secondary-color: #3E3AF1;
-    --accent-color: #3E3AF1;
+    --primary-color: #1a2f4a;
+    --primary-dark: #0f2037;
+    --primary-light: #243b52;
+    --secondary-color: #1a2f4a;
+    --accent-color: #1a2f4a;
     --accent-complement: #e6a817;
-    --text-primary: #3E3AF1;
-    --text-secondary: #4a46b8;
-    --text-muted: #6b68c4;
+    --text-primary: #1a2f4a;
+    --text-secondary: #2a4a6a;
+    --text-muted: #3d5a7a;
     --bg-primary: #ffffff;
     --bg-secondary: #ffffff;
     --bg-tertiary: #f8f9fa;
     --bg-card: #ffffff;
-    --border-color: rgba(62, 58, 241, 0.15);
-    --gradient-primary: linear-gradient(135deg, #3E3AF1 0%, #3229d4 100%);
-    --gradient-secondary: linear-gradient(135deg, #3E3AF1 0%, #3229d4 100%);
-    --divider-color: rgba(62, 58, 241, 0.2);
+    --border-color: rgba(26, 47, 74, 0.15);
+    --gradient-primary: linear-gradient(135deg, #1a2f4a 0%, #0f2037 100%);
+    --gradient-secondary: linear-gradient(135deg, #1a2f4a 0%, #0f2037 100%);
+    --divider-color: rgba(26, 47, 74, 0.2);
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -433,7 +433,7 @@ body.menu-open .nav-overlay {
     position: relative;
     width: 100%;
     height: 100%;
-    border: 3px solid #3E3AF1;
+    border: 3px solid var(--primary-color);
     border-radius: 12px;
     box-shadow: 0 0 30px rgba(62, 58, 241, 0.5), 0 0 60px rgba(62, 58, 241, 0.3), 0 4px 15px rgba(62, 58, 241, 0.3);
     overflow: visible;
@@ -895,7 +895,7 @@ body.menu-open .nav-overlay {
     margin: 0 auto;
     cursor: pointer;
     transition: transform 0.3s ease;
-    border: 3px solid #3E3AF1;
+    border: 3px solid var(--primary-color);
     border-radius: 12px;
     box-shadow: 0 0 30px rgba(62, 58, 241, 0.5), 0 0 60px rgba(62, 58, 241, 0.3), 0 4px 15px rgba(62, 58, 241, 0.3);
     overflow: visible;
@@ -1745,7 +1745,7 @@ body.menu-open .nav-overlay {
     color: #ffffff;
     display: inline-block;
     padding: 0.5rem 1rem;
-    border: 2px solid #3E3AF1;
+    border: 2px solid var(--primary-color);
     border-radius: 8px;
     background: transparent;
 }
@@ -1943,7 +1943,7 @@ body.menu-open .nav-overlay {
 }
 
 .case-study-headline-link:hover h4 {
-    color: #3E3AF1;
+    color: var(--primary-color);
 }
 
 .story-excerpt {

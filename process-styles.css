@@ -95,7 +95,7 @@ body.process-page {
     border: none;
     background: linear-gradient(135deg, rgba(17, 31, 70, 0.08) 0%, rgba(17, 31, 70, 0.03) 100%);
     border-radius: 20px;
-    border-left: 4px solid #3E3AF1;
+    border-left: 4px solid #1a2f4a;
 }
 
 .why-content blockquote::before {
@@ -104,7 +104,7 @@ body.process-page {
     top: -10px;
     left: 30px;
     font-size: 4rem;
-    color: #3E3AF1;
+    color: #1a2f4a;
     font-family: serif;
     line-height: 1;
 }
@@ -125,7 +125,7 @@ body.process-page {
 
 .why-content blockquote cite {
     font-size: 1.2rem;
-    color: #3E3AF1;
+    color: #1a2f4a;
     font-weight: 600;
     font-style: normal;
     display: block;
@@ -178,7 +178,7 @@ body.process-page {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #3E3AF1 0%, #3229d4 100%);
+    background: linear-gradient(90deg, #1a2f4a 0%, #0f2037 100%);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -203,7 +203,7 @@ body.process-page {
 .step-letter {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #3E3AF1 0%, #3229d4 100%);
+    background: linear-gradient(135deg, #1a2f4a 0%, #0f2037 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -260,7 +260,7 @@ body.process-page {
 }
 
 .step-bullets i {
-    color: #3E3AF1;
+    color: #1a2f4a;
     font-size: 0.9rem;
     margin-top: 0.1rem;
     flex-shrink: 0;
@@ -271,7 +271,7 @@ body.process-page {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #3E3AF1;
+    color: #1a2f4a;
     font-size: 1.5rem;
     animation: pulse 2s infinite;
     padding: 0 0.5rem;
@@ -321,7 +321,7 @@ body.process-page {
 .benefit-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #3E3AF1 0%, #3229d4 100%);
+    background: linear-gradient(135deg, #1a2f4a 0%, #0f2037 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -375,7 +375,7 @@ body.process-page {
 
 .process-cta .cta-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #3E3AF1 0%, #3229d4 100%);
+    background: linear-gradient(135deg, #1a2f4a 0%, #0f2037 100%);
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
@@ -387,7 +387,7 @@ body.process-page {
 }
 
 .process-cta .highlight {
-    color: #3E3AF1;
+    color: #1a2f4a;
     font-weight: 800;
 }
 
@@ -399,7 +399,7 @@ body.process-page {
 
 .process-cta .cta-subtext-container {
     background: rgba(17, 31, 70, 0.05);
-    border-left: 3px solid #3E3AF1;
+    border-left: 3px solid #1a2f4a;
     padding: 1.5rem 2rem;
     border-radius: 0 8px 8px 0;
     margin-bottom: 3rem;
@@ -430,7 +430,7 @@ body.process-page {
     padding: 18px 36px;
     font-size: 1.1rem;
     font-weight: 600;
-    background: linear-gradient(135deg, #3E3AF1 0%, #3229d4 100%);
+    background: linear-gradient(135deg, #1a2f4a 0%, #0f2037 100%);
     border: none;
     border-radius: 10px;
     color: white;
@@ -445,7 +445,7 @@ body.process-page {
 .process-cta .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(17, 31, 70, 0.35);
-    background: linear-gradient(135deg, #3E3AF1 0%, #3229d4 100%);
+    background: linear-gradient(135deg, #1a2f4a 0%, #0f2037 100%);
 }
 
 .cta-subtext {
