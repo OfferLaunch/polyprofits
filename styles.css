@@ -147,10 +147,13 @@ body.menu-open {
     color: var(--primary-dark);
 }
 
-.footer-logo {
+.footer-logo,
+.footer-logo-link img.footer-logo {
     height: 50px;
     width: auto;
-    margin-bottom: 15px;
+    max-width: 200px;
+    margin-bottom: 0;
+    object-fit: contain;
     opacity: 0.9;
     transition: opacity 0.3s ease;
 }
@@ -3139,6 +3142,15 @@ body.menu-open .nav-overlay {
     color: #ffffff;
     margin: 0 auto 1.5rem;
     opacity: 0.95;
+}
+
+.policy-hero-logo {
+    display: block;
+    height: 48px;
+    width: auto;
+    max-width: 220px;
+    margin: 0 auto 1.5rem;
+    object-fit: contain;
 }
 
 .policy-footer {
