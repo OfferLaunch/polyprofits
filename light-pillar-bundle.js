@@ -47845,6 +47845,10 @@ void main() {
       setTimeout(initLightPillar, 100);
       return;
     }
+    const path = (typeof window !== "undefined" && window.location.pathname) ? window.location.pathname.toLowerCase() : "";
+    const isLighterPage = /^\/(about|results|legal\/)/.test(path) || /(^|\/)about\.html|results\.html/.test(path);
+    const topColor = isLighterPage ? "#243b52" : "#1a2f4a";
+    const bottomColor = isLighterPage ? "#1a2f4a" : "#0f2037";
     try {
       const reactRoot = import_client.default.createRoot(root);
       reactRoot.render(
@@ -47852,8 +47856,8 @@ void main() {
           "div",
           { style: { width: "100%", height: "100%", position: "absolute", top: 0, left: 0 } },
           import_react2.default.createElement(LightPillar_default, {
-            topColor: "#1a2f4a",
-            bottomColor: "#0f2037",
+            topColor,
+            bottomColor,
             intensity: 0.9,
             rotationSpeed: 0.1,
             glowAmount: 2e-3,

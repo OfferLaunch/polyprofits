@@ -707,7 +707,7 @@ body.menu-open .nav-overlay {
     box-sizing: border-box;
     background: transparent;
 }
-/* Invisible by default; only hero-grid-bg squares show. On hover: that square lights up blue */
+/* Invisible by default; only hero-grid-bg squares show. On hover: that square lights up navy */
 .hero-pillar {
     --rise: 0;
     position: relative;
@@ -718,12 +718,12 @@ body.menu-open .nav-overlay {
     transform: scaleY(calc(1 + var(--rise) * 0.4)) translateZ(0);
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background 0.2s ease-out;
     will-change: transform;
-    background: rgba(62, 58, 241, calc(var(--rise) * 0.82));
+    background: rgba(26, 47, 74, calc(var(--rise) * 0.82));
     border: none;
     outline: none;
     box-shadow:
-        0 calc(var(--rise) * 3px) calc(var(--rise) * 10px) rgba(62, 58, 241, 0.28),
-        0 calc(var(--rise) * 1px) calc(var(--rise) * 4px) rgba(62, 58, 241, 0.18);
+        0 calc(var(--rise) * 3px) calc(var(--rise) * 10px) rgba(26, 47, 74, 0.28),
+        0 calc(var(--rise) * 1px) calc(var(--rise) * 4px) rgba(26, 47, 74, 0.18);
 }
 .hero-pillar::before {
     content: '';
@@ -733,7 +733,7 @@ body.menu-open .nav-overlay {
     right: 0;
     height: 2px;
     border-radius: 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(62, 58, 241, 0.45));
+    background: linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(26, 47, 74, 0.45));
     opacity: var(--rise);
     pointer-events: none;
 }
@@ -1425,17 +1425,17 @@ body.menu-open .nav-overlay {
     height: 96px;
     border-radius: 0;
     object-fit: contain;
-    box-shadow: 0 8px 24px rgba(62, 58, 241, 0.25);
+    box-shadow: 0 8px 24px rgba(26, 47, 74, 0.25);
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
 }
 
 .system-card-visual:hover .system-visual-core {
     transform: rotate(360deg);
-    box-shadow: 0 12px 32px rgba(62, 58, 241, 0.3);
+    box-shadow: 0 12px 32px rgba(26, 47, 74, 0.3);
 }
 
 .system-visual-core--glow {
-    box-shadow: 0 8px 24px rgba(62, 58, 241, 0.25), 0 0 40px rgba(62, 58, 241, 0.2);
+    box-shadow: 0 8px 24px rgba(26, 47, 74, 0.25), 0 0 40px rgba(26, 47, 74, 0.2);
 }
 
 .system-visual-core--quiet {
