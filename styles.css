@@ -686,8 +686,8 @@ body.menu-open .nav-overlay {
 }
 .hero-light .hero-grid-bg {
     background-image:
-        linear-gradient(rgba(62, 58, 241, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(62, 58, 241, 0.06) 1px, transparent 1px);
+        linear-gradient(rgba(26, 47, 74, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 47, 74, 0.06) 1px, transparent 1px);
     background-size: 32px 32px;
     background-position: 0 0;
 }
