@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - PolyProfits</title>
+    <meta name="description" content="Terms of Service for PolyProfits. Our service terms and conditions.">
+    
+    <meta name="theme-color" content="#1a2f4a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PolyProfits">
+    
+    <meta property="og:title" content="Terms of Service - PolyProfits">
+    <meta property="og:description" content="Terms of Service for PolyProfits.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://polyprofits.co/terms-of-service/">
+    <meta property="og:image" content="https://polyprofits.co/assets/images/placeholders/og-image.svg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/emblems/emblem-blue.png">
+    <link rel="icon" type="image/png" href="../assets/images/emblems/emblem-black.png" media="(prefers-color-scheme: light)">
+    <link rel="apple-touch-icon" href="../assets/images/emblems/emblem-blue.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Cache Control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="../styles.css?v=1759850000" as="style">
+    <link rel="preload" href="../script.js?v=1759850000" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" as="style">
+    
+    <!-- Policy page: light blue (home second section) + glassmorphic content -->
+    <style>
+        body { margin: 0; font-family: 'Manrope', sans-serif; color: #1a1a2e; }
+        body .page-background {
+            background: linear-gradient(180deg, #E0E8FF 0%, #F0F4FF 40%, #f8fafc 100%) !important;
+        }
+        body #light-pillar-root { display: none !important; }
+        .policy-hero {
+            padding: 120px 0 60px;
+            background: transparent;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .policy-hero .hero-content { max-width: 800px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
+        .legal-logo-bar {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            z-index: 1002;
+        }
+        .legal-logo-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(26, 47, 74, 0.12);
+            border-radius: 9999px;
+            padding: 8px 14px;
+            box-shadow: 0 8px 24px rgba(26, 47, 74, 0.12);
+        }
+        .legal-logo-link img {
+            height: 30px;
+            width: auto;
+            display: block;
+        }
+        .policy-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1a2f4a;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        .policy-hero-logo { display: block; height: 48px; width: auto; max-width: 220px; margin: 0 auto 1.5rem; object-fit: contain; }
+        .policy-hero .hero-subtitle { font-size: 1.25rem; color: #1a2f4a; line-height: 1.6; font-weight: 500; max-width: 600px; margin: 0 auto; }
+        .policy-content { padding: 80px 0; background: transparent; position: relative; z-index: 1; }
+        .policy-content .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .content-wrapper {
+            background: rgba(26, 47, 74, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 3rem;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .content-wrapper h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a2f4a;
+            margin: 3rem 0 1.5rem 0;
+            line-height: 1.3;
+            padding-left: 1rem;
+            border-left: 4px solid #1a2f4a;
+        }
+        .content-wrapper h2:first-of-type { margin-top: 0; }
+        .content-wrapper h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #1a2f4a;
+            margin: 2.5rem 0 1rem 0;
+            line-height: 1.4;
+            padding-left: 0.75rem;
+            border-left: 3px solid #1a2f4a;
+        }
+        .content-wrapper p { font-size: 1.1rem; line-height: 1.7; color: #ffffff; margin-bottom: 1.5rem; }
+        .content-wrapper ul { margin: 1.5rem 0; padding-left: 1.5rem; }
+        .content-wrapper li { font-size: 1.1rem; line-height: 1.7; color: #ffffff; margin-bottom: 0.75rem; }
+        .content-wrapper a { color: rgba(255, 255, 255, 0.95); text-decoration: underline; }
+        .content-wrapper a:hover { color: #ffffff; }
+        .policy-toc {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2.5rem;
+        }
+        .policy-toc h2 { margin-top: 0; margin-bottom: 1rem; color: #1a2f4a; font-size: 1.25rem; }
+        .policy-toc ol { margin: 0; padding-left: 1.5rem; }
+        .policy-toc li { margin-bottom: 0.5rem; color: #ffffff; }
+        .policy-toc a { color: #ffffff; text-decoration: none; }
+        .policy-toc a:hover { color: rgba(255, 255, 255, 0.9); }
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #1a2f4a;
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+        }
+        .contact-info p { margin: 0.5rem 0; color: #1a2f4a; }
+        @media (max-width: 768px) {
+            .policy-hero h1 { font-size: 2.5rem; }
+            .policy-hero .hero-subtitle { font-size: 1.1rem; }
+            .content-wrapper { padding: 2rem; }
+            .content-wrapper h2 { font-size: 1.8rem; }
+            .content-wrapper h3 { font-size: 1.4rem; }
+        }
+    </style>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="../styles.css?v=1759850000">
+    <link rel="stylesheet" href="../light-pillar-bundle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+</head>
+<body>
+    <div class="page-background">
+        <div id="light-pillar-root" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 0; overflow: hidden; pointer-events: none;"></div>
+    </div>
+
+    <div class="legal-logo-bar">
+        <a href="../" class="legal-logo-link" aria-label="Back to home">
+            <img src="../assets/images/logos/logo-navy.png" alt="PolyProfits" width="150" height="34">
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="policy-hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <img src="../assets/images/logos/logo-navy.png" alt="PolyProfits" class="policy-hero-logo" width="220" height="48">
+                <h1>Terms of Service</h1>
+                <p class="hero-subtitle">Terms &amp; Conditions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms of Service Content -->
+    <section class="policy-content">
+        <div class="container">
+            <div class="content-wrapper" data-aos="fade-up">
+                <h2>OVERVIEW</h2>
+                <p>Welcome to PolyProfits! We are a company that provides a website, including all the information, tools, and services available on the site, to our users. By using our website, you agree to be bound by the following Terms of Service ("Terms"), which apply to all users of our site.</p>
+                <p>Please carefully read these Terms before accessing or using our website. If you do not agree to all the terms and conditions of this agreement, then you may not access the website or use any services. By using any part of the site, you agree to be bound by these Terms of Service. If these Terms are considered an offer, acceptance is expressly limited to these Terms of Service.</p>
+                <p>Any new features or tools which are added to our website shall also be subject to these Terms. We reserve the right to update, change or replace any part of these Terms of Service by posting updates and/or changes to our website. It is your responsibility to check this page periodically for changes. Your continued use of or access to the website following the posting of any changes constitutes acceptance of those changes.</p>
+                <p>Our website is hosted by GoHighLevel, which provides us with the online e-commerce platform that allows us to sell our products and services to you.</p>
+
+                <h2>SECTION 1 – ONLINE STORE TERMS</h2>
+                <p>By using our website, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence and you have given us your consent to allow any of your minor dependents to use this site.</p>
+                <p>You may not use our products for any illegal or unauthorized purpose, nor may you, in the use of the Service, violate any laws in your jurisdiction (including but not limited to copyright laws).</p>
+                <p>You must not transmit any worms or viruses or any code of a destructive nature.</p>
+                <p>A breach or violation of any of these Terms will result in an immediate termination of your Services.</p>
+
+                <h2>SECTION 2 – GENERAL CONDITIONS</h2>
+                <p>We reserve the right to refuse service to anyone for any reason at any time.</p>
+                <p>You understand that your content (not including credit card information) may be transferred unencrypted and involve (a) transmissions over various networks; and (b) changes to conform and adapt to technical requirements of connecting networks or devices. Credit card information is always encrypted during transfer over networks.</p>
+                <p>You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of the Service, use of the Service, or access to the Service or any contact on the website through which the service is provided, without express written permission by us.</p>
+                <p>The headings used in these Terms are included for convenience only and will not limit or otherwise affect these Terms.</p>
+
+                <h2>SECTION 3 – ACCURACY, COMPLETENESS AND TIMELINESS OF INFORMATION</h2>
+                <p>PolyProfits is not responsible if the information provided on its website is not accurate, complete, or current. The material provided on the website is for general information only and should not be used as the sole basis for making decisions. Users should consult primary, more accurate, more complete, or more timely sources of information before making any decisions. Any reliance on the material provided on the website is at the user's own risk.</p>
+                <p>The website may contain historical information that is not current and is provided for reference only. PolyProfits reserves the right to modify the contents of the website at any time without any obligation to update any information. Users are responsible for monitoring changes to the website.</p>
+
+                <h2>SECTION 4 – MODIFICATIONS TO THE SERVICE AND PRICES</h2>
+                <p>Prices for products offered by PolyProfits are subject to change without notice. PolyProfits reserves the right to modify or discontinue the Service, or any part or content thereof, at any time without notice. PolyProfits shall not be liable to users or any third-party for any modification, price change, suspension, or discontinuance of the Service.</p>
+
+                <h2>SECTION 5 – PRODUCTS OR SERVICES (if applicable)</h2>
+                <p>Certain products or services may be available exclusively online through the PolyProfits website. These products or services may have limited quantities and are subject to return or exchange only according to the Return Policy. PolyProfits has made every effort to display the colors and images of its products as accurately as possible, but cannot guarantee that the user's computer monitor's display of any color will be accurate.</p>
+                <p>PolyProfits reserves the right, but is not obligated, to limit the sales of its products or services to any person, geographic region, or jurisdiction. PolyProfits may exercise this right on a case-by-case basis. PolyProfits reserves the right to limit the quantities of any products or services that it offers. All descriptions of products or product pricing are subject to change at any time without notice at the sole discretion of PolyProfits. PolyProfits reserves the right to discontinue any product at any time. Any offer for any product or service made on this site is void where prohibited. PolyProfits does not warrant that the quality of any products, services, information, or other material purchased or obtained by the user will meet their expectations, or that any errors in the Service will be corrected.</p>
+
+                <h2>SECTION 6 – ACCURACY OF BILLING AND ACCOUNT INFORMATION</h2>
+                <p>PolyProfits reserves the right to refuse any order placed by a user. PolyProfits may, at its sole discretion, limit or cancel quantities purchased per person, per household, or per order. These restrictions may include orders placed by or under the same customer account, the same credit card, and/or orders that use the same billing and/or shipping address. If PolyProfits makes a change to or cancels an order, it may attempt to notify the user by contacting the email and/or billing address/phone number provided at the time the order was made. PolyProfits reserves the right to limit or prohibit orders that, in its sole judgment, appear to be placed by dealers, resellers, or distributors.</p>
+                <p>Users agree to provide current, complete, and accurate purchase and account information for all purchases made at PolyProfits. Users agree to promptly update their account and other information, including their email address and credit card numbers and expiration dates, so that PolyProfits can complete transactions and contact them as needed.</p>
+                <p>For more detail, users should review the Return Policy.</p>
+
+                <h2>SECTION 7 – FEES AND PAYMENT TERMS</h2>
+                <p>In consideration for the Services provided hereunder, Subscriber shall pay to PolyProfits such fees as are specified in then current rate card for the Services posted on the PolyProfits site (the "Fees") on a one-time license fee and monthly subscription on a recurring basis. Fees are payable by credit card, ACH, wire, via such then current wiring instructions as are posted on the PolyProfits site, within seven (7) days of Subscriber's receipt of an invoice therefor. All payments of Fees are non-refundable, except as expressly set forth herein. License fees are non-refundable. The Fees shall be exclusive of all taxes, levies, duties or similar charges, that may be assessed by any jurisdiction (collectively "Taxes"), and Subscriber shall be responsible for all Taxes arising out of this Agreement, other than any Taxes assessed or levied on PolyProfits in respect of revenue earned by PolyProfits pursuant to this Agreement. PolyProfits may refuse to provide or suspend its provision of any Services in the event Subscriber has failed to pay any amounts due under this Agreement by the due date therefor.</p>
+
+                <h2>SECTION 8 – OPTIONAL TOOLS</h2>
+                <p>PolyProfits may offer you access to third-party tools. However, we do not monitor or control these tools, nor do we endorse them in any way. We provide them "as is" and "as available" without any warranties, representations, or conditions. We will not be liable for any damages or losses arising from your use of these optional third-party tools. Your use of these tools is entirely at your own risk, and you should review and approve the terms of service provided by the relevant third-party provider(s). Any new services or features offered through the website will also be subject to these Terms of Service.</p>
+
+                <h2>SECTION 9 – THIRD-PARTY LINKS</h2>
+                <p>PolyProfits may include content, products, and services from third-party providers. Third-party links on our site may direct you to websites that are not affiliated with us, and we do not evaluate or examine their content or accuracy. We do not warrant or assume any liability for any third-party materials, products, or services. We will not be responsible for any harm or damages arising from your use of third-party websites or any transactions made in connection with them. You should carefully review the third-party's policies and practices and ensure that you understand them before engaging in any transaction. Any complaints, claims, concerns, or questions regarding third-party products should be directed to the third-party.</p>
+
+                <h2>SECTION 10 – USER COMMENTS, FEEDBACK AND OTHER SUBMISSIONS</h2>
+                <p>If we request certain specific submissions or if you send creative ideas, suggestions, proposals, plans, or other materials, whether online or offline, you agree that we may use them in any medium without restriction. We are not obligated to maintain any comments in confidence, pay compensation for any comments, or respond to any comments. We may, at our discretion, monitor, edit, or remove content that we determine to be unlawful, offensive, threatening, libelous, defamatory, pornographic, obscene, or otherwise objectionable or violates any party's intellectual property or these Terms of Service. You agree that your comments will not violate any right of any third-party, including copyright, trademark, privacy, personality, or other personal or proprietary right. Your comments will not contain unlawful, abusive, or obscene material, or any computer virus or other malware that could affect the operation of the Service or any related website. You may not use a false e-mail address, pretend to be someone else, or mislead us or third-parties as to the origin of any comments. You are solely responsible for the accuracy of your comments. We take no responsibility and assume no liability for any comments posted by you or any third-party.</p>
+
+                <h2>SECTION 11 – PERSONAL INFORMATION</h2>
+                <p>Your submission of personal information through our store is governed by our Privacy Policy. By submitting your information, you acknowledge that you have received, read, and agree with the terms of our Privacy Policy. You consent to be contacted by PolyProfits, including by auto-dialed telemarketing calls, SMS, and/or emails, regarding our products and services. We may share your information with our affiliates and vendors.</p>
+
+                <h2>SECTION 12 – TEXT MESSAGING &amp; NOTIFICATIONS</h2>
+                <p>By subscribing to our text messaging service, you agree to receive automated marketing messages and shopping cart reminders at the phone number you provide. Your consent is not a requirement for making purchases. You can unsubscribe from our service at any time by sending STOP, CANCEL, QUIT, END, or UNSUBSCRIBE to any mobile message you receive from us. Standard messaging and data rates may apply. More information can be found in our Terms of Service. We use cookies to determine if a user has opted-in for text marketing and to detect abandoned carts. If you opt-in for our service, you may receive occasional messages about text alerts, surveys, welcome messages, customer win-backs, text campaigns, giveaways, flash sales, and upsells. If your device does not support MMS, we will send a standard SMS instead, without the image. Carriers (such as AT&amp;T, T-Mobile, Verizon, Sprint, Rogers, and MetroPCS) are not responsible for undelivered or delayed messages.</p>
+
+                <h2>SECTION 13 – ERRORS, INACCURACIES, AND OMISSIONS</h2>
+                <p>Occasionally, our site or service may contain typographical errors, inaccuracies, or omissions related to product descriptions, pricing, promotions, offers, product shipping charges, transit times, and availability. We reserve the right to correct any errors, inaccuracies, or omissions, and to change or update information, or cancel orders if any information in our service is inaccurate, without prior notice. We are not obligated to update, amend or clarify information in our service, including pricing information, except as required by law. We are not responsible for any modifications or updates in the service or related website.</p>
+
+                <h2>SECTION 14 – PROHIBITED USES</h2>
+                <p>Our site and service are subject to the following prohibitions, including but not limited to:</p>
+                <ul>
+                    <li>(a) Using the site or its content for any unlawful purpose;</li>
+                    <li>(b) Soliciting others to perform or participate in any unlawful acts;</li>
+                    <li>(c) Violating any international, federal, provincial, or state regulations, rules, laws, or local ordinances;</li>
+                    <li>(d) Infringing upon or violating our intellectual property rights or the intellectual property rights of others;</li>
+                    <li>(e) Harassing, abusing, insulting, harming, defaming, slandering, disparaging, intimidating, or discriminating based on gender, sexual orientation, religion, ethnicity, race, age, national origin, or disability;</li>
+                    <li>(f) Submitting false or misleading information;</li>
+                    <li>(g) Uploading or transmitting viruses or any other type of malicious code that will or may be used in any way that will affect the functionality or operation of the service or related websites;</li>
+                    <li>(h) Collecting or tracking the personal information of others;</li>
+                    <li>(i) Spamming, phishing, pharming, pretexting, spidering, crawling, or scraping;</li>
+                    <li>(j) Using the site or its content for any obscene or immoral purpose;</li>
+                    <li>(k) Interfering with or circumventing the security features of the service or any related website;</li>
+                    <li>(l) Gaining unauthorized access to the company's data or the data of other users;</li>
+                    <li>(m) Altering, modifying, adapting, reverse engineering, decompiling, disassembling, or hacking the company's intellectual property;</li>
+                    <li>(n) Breaching, or attempting to breach, the website's security systems;</li>
+                    <li>(o) Enabling third parties to violate the Terms of Use.</li>
+                </ul>
+                <p>We reserve the right to terminate your use of the service or any related website for violating any of the prohibited uses.</p>
+
+                <h2>SECTION 15 – DISCLAIMER OF WARRANTIES; LIMITATION OF LIABILITY</h2>
+                <p>At PolyProfits, we strive to provide you with the best possible service, but we cannot guarantee that your use of our service will be uninterrupted, timely, secure, or error-free. We do not warrant that the results obtained from using our service will be accurate or reliable. You acknowledge and agree that from time to time, we may remove the service for indefinite periods or cancel it at any time, without prior notice to you. Your use of our service is entirely at your own risk, and our service and all products and services delivered through our service are provided "as is" and "as available," without any representations, warranties, or conditions of any kind, whether express or implied, including all implied warranties or conditions of merchantability, merchantable quality, fitness for a particular purpose, durability, title, and non-infringement, except as expressly stated by us.</p>
+                <p>In no event shall PolyProfits, our directors, officers, employees, affiliates, agents, contractors, interns, suppliers, service providers, or licensors be liable for any injury, loss, claim, or any direct, indirect, incidental, punitive, special, or consequential damages of any kind, including, without limitation, lost profits, lost revenue, lost savings, loss of data, replacement costs, or any similar damages, whether based in contract, tort (including negligence), strict liability or otherwise, arising from your use of our service or any products procured using the service, or for any other claim related in any way to your use of the service or any product, including, but not limited to, any errors or omissions in any content or any loss or damage of any kind incurred as a result of the use of the service or any content (or product) posted, transmitted, or otherwise made available via the service, even if advised of their possibility. Because some states or jurisdictions do not allow the exclusion or the limitation of liability for consequential or incidental damages, in such states or jurisdictions, our liability shall be limited to the maximum extent permitted by law.</p>
+
+                <h2>SECTION 16 – INDEMNIFICATION</h2>
+                <p>You agree to indemnify, defend, and hold harmless PolyProfits and our parent, subsidiaries, affiliates, partners, officers, directors, agents, contractors, licensors, service providers, subcontractors, suppliers, interns, and employees from any claim or demand, including reasonable attorneys' fees, made by any third-party due to or arising out of your breach of these Terms of Service or the documents they incorporate by reference, or your violation of any law or the rights of a third-party.</p>
+
+                <h2>SECTION 17 – SEVERABILITY</h2>
+                <p>If any provision of these Terms of Service is found to be unlawful, void, or unenforceable, such provision shall nonetheless be enforceable to the fullest extent permitted by applicable law, and the unenforceable portion shall be deemed to be severed from these Terms of Service. Such a determination shall not affect the validity and enforceability of any other remaining provisions.</p>
+
+                <h2>SECTION 18 – TERMINATION</h2>
+                <p>These Terms of Service are effective unless and until terminated by either you or us. You may terminate these Terms of Service at any time by notifying us that you no longer wish to use our Services, or when you cease using our site.</p>
+                <p>If, in our sole discretion, we determine that you have failed to comply with any term or provision of these Terms of Service or we suspect that you have done so, we may terminate this agreement at any time without notice. You will remain liable for all amounts due up to and including the date of termination, and we may deny you access to our Services (or any part thereof) accordingly. The parties' obligations and liabilities incurred prior to the termination date shall survive the termination of this agreement for all purposes.</p>
+
+                <h2>SECTION 19 – ENTIRE AGREEMENT</h2>
+                <p>If we fail to enforce any right or provision of these Terms of Service, it does not constitute a waiver of that right or provision. These Terms of Service, along with any policies or rules posted by us on our website or in relation to our service, constitute the entire agreement between you and PolyProfits, governing your use of our service and superseding any prior or contemporaneous agreements, communications, and proposals, whether oral or written.</p>
+
+                <h2>SECTION 20 – GOVERNING LAW</h2>
+                <p>These Terms of Service and any separate agreements that we enter into with you for our service will be governed by and construed in accordance with the laws of the State of Florida, United States, without giving effect to any principles of conflicts of law.</p>
+
+                <h2>SECTION 21 – CHANGES TO TERMS OF SERVICE</h2>
+                <p>You can always find the most current version of our Terms of Service on our website. We reserve the right, at our sole discretion, to update, change, or replace any part of these Terms of Service by posting updates and changes on our website. It is your responsibility to periodically review our website for any changes. Your continued use of our service after we post any modifications to these Terms of Service constitutes your acceptance of those changes.</p>
+                <p>For a detailed breakdown of associated fees, please review our current fee rate card.</p>
+
+                <h2>SECTION 22 – CONTACT INFORMATION</h2>
+                <p>If you have any questions or concerns about our Terms &amp; Conditions, please email us at:</p>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> team@polyprofits.co</p>
+                    <p><strong>Address:</strong> PolyProfits, Remote</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="../" class="footer-logo-link"><img src="../assets/images/logos/logo-white.png" alt="PolyProfits" class="footer-logo" width="200" height="44"></a>
+                    <p>Automated Polymarket bot that wins on your behalf. Fully automated.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li><a href="../process.html">How It Works</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../results.html">Results</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service/">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2026 PolyProfits. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Performance Optimization Script -->
+    <script src="../performance-optimization.js?v=1759850000"></script>
+    
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Main Scripts -->
+    <script src="../script.js?v=1759850000"></script>
+    
+    <script src="../light-pillar-bundle.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator && !window.serviceWorkerRegistered) {
+            window.serviceWorkerRegistered = true;
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('../sw.js?v=1759850000')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful');
+                        
+                        // Check for updates
+                        registration.addEventListener('updatefound', function() {
+                            console.log('New service worker found, but not auto-reloading');
+                        });
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+    
+    <!-- AOS Initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Terms of Service: DOM loaded, initializing AOS');
+            setTimeout(function() {
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        duration: 800,
+                        once: true,
+                        offset: 100
+                    });
+                    console.log('AOS initialized on terms of service');
+                } else {
+                    console.warn('AOS not loaded on terms of service');
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html> 

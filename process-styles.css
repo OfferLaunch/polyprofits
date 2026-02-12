@@ -6,11 +6,28 @@ body.process-page {
 }
 
 .process-page .final-cta {
-    background: #ffffff;
+    background: transparent;
 }
 
+/* Process page footer – match home (navy + white text) */
 .process-page .footer {
-    background: #ffffff;
+    background: #1a2f4a !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+.process-page .footer .footer-section h4,
+.process-page .footer .footer-section p,
+.process-page .footer .footer-section ul li a,
+.process-page .footer .footer-bottom,
+.process-page .footer .footer-bottom p,
+.process-page .footer .footer-links a {
+    color: rgba(255, 255, 255, 0.95);
+}
+.process-page .footer .footer-section p {
+    color: rgba(255, 255, 255, 0.9);
+}
+.process-page .footer .footer-section ul li a:hover,
+.process-page .footer .footer-links a:hover {
+    color: #ffffff;
 }
 
 /* Process Hero Section - animated background only in this block */

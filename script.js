@@ -453,11 +453,12 @@ document.querySelectorAll('form').forEach(form => {
     });
 });
 
-// Hero 3D pillars – mouse-follow rise effect (home page only)
+// Hero 3D pillars – mouse-follow rise effect (home hero + results page)
 (function initHeroPillars() {
     const heroSection = document.getElementById('heroSection');
     const container = document.getElementById('heroPillars');
-    if (!heroSection || !container) return;
+    if (!container) return;
+    var trackTarget = heroSection || document.body;
 
     const total = 30 * 12;
 
@@ -474,7 +475,6 @@ document.querySelectorAll('form').forEach(form => {
     let rafId = null;
 
     function updatePillars() {
-        const heroRect = heroSection.getBoundingClientRect();
         pillars.forEach(function(pillar) {
             const r = pillar.getBoundingClientRect();
             const cx = r.left + r.width / 2;
@@ -492,13 +492,13 @@ document.querySelectorAll('form').forEach(form => {
         if (rafId === null) rafId = requestAnimationFrame(updatePillars);
     }
 
-    heroSection.addEventListener('mousemove', function(e) {
+    trackTarget.addEventListener('mousemove', function(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
         scheduleUpdate();
     });
 
-    heroSection.addEventListener('mouseleave', function() {
+    trackTarget.addEventListener('mouseleave', function() {
         mouseX = -1000;
         mouseY = -1000;
         scheduleUpdate();

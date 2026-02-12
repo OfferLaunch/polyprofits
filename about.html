@@ -46,12 +46,36 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css?v=1758294251">
-    <link rel="stylesheet" href="light-pillar-bundle.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <style>
+        /* Same white grid + cursor-follow pillars as results page */
+        .about-page .page-background {
+            background: #ffffff !important;
+        }
+        .about-page .page-background .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .about-page .page-background .hero-grid-bg {
+            background-image:
+                linear-gradient(rgba(26, 47, 74, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(26, 47, 74, 0.06) 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-position: 0 0;
+        }
+        .about-page .page-background .hero-pillars-wrap {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
         /* About Page Specific Styles (light theme) */
         .about-hero {
             padding: 120px 0 80px;
@@ -104,7 +128,7 @@
         
         .about-content {
             padding: 80px 0;
-            background: rgba(17, 17, 17, 0.95);
+            background: transparent;
             position: relative;
             z-index: 1;
         }
@@ -118,8 +142,8 @@
         }
         
         .about-content .content-section {
-            background: rgba(10, 10, 10, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #1a2f4a;
+            border: 2px solid rgba(255, 255, 255, 0.15);
             border-radius: 20px;
             padding: 3rem;
             position: relative;
@@ -134,7 +158,7 @@
         .about-content .content-section h2 {
             font-size: 2.2rem;
             font-weight: 700;
-            color: var(--text-primary);
+            color: #ffffff;
             margin: 0 0 1.5rem 0;
             line-height: 1.3;
         }
@@ -146,7 +170,7 @@
         .about-content .content-section h3 {
             font-size: 1.6rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: #ffffff;
             margin: 2.5rem 0 1rem 0;
             line-height: 1.4;
         }
@@ -154,7 +178,7 @@
         .about-content .content-section p {
             font-size: 1.1rem;
             line-height: 1.7;
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 1.5rem;
         }
         
@@ -166,13 +190,13 @@
         .about-content .content-section li {
             font-size: 1.1rem;
             line-height: 1.7;
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 0.75rem;
         }
         
         .about-content .content-section .highlight-box {
-            background: linear-gradient(135deg, rgba(17, 31, 70, 0.1) 0%, rgba(17, 31, 70, 0.05) 100%);
-            border-left: 4px solid #1a2f4a;
+            background: rgba(255, 255, 255, 0.08);
+            border-left: 4px solid rgba(255, 255, 255, 0.5);
             padding: 1.5rem 2rem;
             border-radius: 0 12px 12px 0;
             margin: 2rem 0;
@@ -181,6 +205,7 @@
         .about-content .content-section .highlight-box p {
             margin-bottom: 0;
             font-weight: 500;
+            color: rgba(255, 255, 255, 0.95);
         }
         
         .values-grid {
@@ -191,8 +216,8 @@
         }
         
         .value-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            background: #1a2f4a;
+            border: 2px solid rgba(255, 255, 255, 0.15);
             border-radius: 15px;
             padding: 1.5rem;
             text-align: center;
@@ -201,13 +226,13 @@
         
         .value-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(26, 47, 74, 0.4);
         }
         
         .value-card .value-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #1a2f4a 0%, #0f2037 100%);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -220,13 +245,13 @@
         .value-card h4 {
             font-size: 1.3rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: #ffffff;
             margin-bottom: 0.5rem;
         }
         
         .value-card p {
             font-size: 1rem;
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 0;
         }
         
@@ -242,7 +267,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(180deg, #1a2f4a 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, transparent 100%);
         }
         
         .timeline-item {
@@ -258,31 +283,135 @@
             top: 0;
             width: 20px;
             height: 20px;
-            background: #1a2f4a;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 50%;
-            border: 3px solid var(--bg-card);
+            border: 3px solid #1a2f4a;
         }
         
         .timeline-content {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            background: #1a2f4a;
+            border: 2px solid rgba(255, 255, 255, 0.15);
             border-radius: 12px;
             padding: 1.5rem;
             margin-left: 1rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(26, 47, 74, 0.3);
         }
         
         .timeline-item h4 {
             font-size: 1.2rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: #ffffff;
             margin-bottom: 0.5rem;
         }
         
         .timeline-item p {
             font-size: 1rem;
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 0;
+        }
+
+        /* Wrapper: gradient from Team section down to footer */
+        .about-team-to-footer {
+            background: linear-gradient(180deg, #E0E8FF 0%, #F0F4FF 40%, #f8fafc 100%);
+            position: relative;
+            z-index: 1;
+        }
+        .about-team-section {
+            padding: 4rem 0 5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .about-team-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .about-team-heading {
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+        .about-team-intro {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+        .about-team-section .founder-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        .about-team-section .founder-row:last-child {
+            margin-bottom: 0;
+        }
+        .about-team-section .founder-image-wrap {
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(26, 47, 74, 0.08);
+            aspect-ratio: 480 / 560;
+        }
+        .about-team-section .founder-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .about-team-section .founder-content {
+            padding: 0 0.5rem;
+        }
+        .about-team-section .founder-name {
+            font-size: clamp(1.35rem, 2.5vw, 1.6rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.02em;
+        }
+        .about-team-section .founder-title {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--primary-color);
+            margin-bottom: 1.25rem;
+        }
+        .about-team-section .founder-bio p {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: var(--text-primary);
+            margin: 0 0 1rem;
+        }
+        .about-team-section .founder-bio p:last-child {
+            margin-bottom: 0;
+        }
+        .about-team-section .founder-social-link {
+            color: var(--primary-color);
+        }
+        .about-team-section .founder-social-link:hover {
+            color: #0f2037;
+        }
+        @media (max-width: 900px) {
+            .about-team-section .founder-row,
+            .about-team-section .founder-row--image-right {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-bottom: 3rem;
+            }
+            .about-team-section .founder-row--image-right .founder-content {
+                order: 2;
+            }
+            .about-team-section .founder-row--image-right .founder-image-wrap {
+                order: 1;
+            }
+            .about-team-section .founder-image-wrap {
+                max-width: 400px;
+                margin: 0 auto;
+            }
         }
         
         .cta-section {
@@ -422,20 +551,16 @@
         }
 
         .final-cta .cta-content {
-            background: rgba(10, 10, 10, 0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 24px;
             padding: 4rem 3rem;
-            box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-lg);
             position: relative;
             overflow: hidden;
             width: 100%;
-            max-width: 100%;
-            margin: 0;
+            max-width: 560px;
+            margin: 0 auto;
             text-align: center;
         }
 
@@ -551,10 +676,11 @@
     }
     </script>
 </head>
-<body class="light-theme">
-    <!-- Page background -->
+<body class="light-theme about-page">
+    <!-- Page background: white grid + cursor-follow pillars -->
     <div class="page-background">
-        <div id="light-pillar-root" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 0; overflow: hidden; pointer-events: none;"></div>
+        <div class="hero-background hero-grid-bg"></div>
+        <div class="hero-pillars-wrap" id="heroPillars" aria-hidden="true"></div>
     </div>
     <nav class="navbar nav-traditional">
         <div class="nav-container">
@@ -565,10 +691,10 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
-                <li><a href="process">How It Works</a></li>
-                <li><a href="about">About Us</a></li>
-                <li><a href="results">Results</a></li>
-                <li><a href="https://go.polyprofits.co/fb-vsl" class="cta-button" target="_blank" rel="noopener noreferrer">Get Started</a></li>
+                <li><a href="process.html">How It Works</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="https://go.polyprofits.co/fb-vsl?el=about-nav-get-started&h_source=website" class="cta-button" target="_blank" rel="noopener noreferrer">Get Started</a></li>
             </ul>
             <button type="button" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
@@ -579,21 +705,164 @@
     </nav>
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
-    <!-- Hero Section -->
+    <!-- Hero: Our Story -->
     <section class="about-hero">
         <div class="hero-content">
-            <h1>About Us</h1>
-            <p class="hero-subtitle">We built an automated Polymarket bot so you can participate in prediction markets without the manual work. Fill in your story and mission here.</p>
+            <h1>Our Story</h1>
+            <p class="hero-subtitle">From watching prediction markets by hand to building a bot that runs 24/7 on Polymarket. This is why we built PolyProfits—and why we're making automated trading accessible to everyone.</p>
         </div>
     </section>
 
-    <!-- Main Content - Placeholder -->
+    <!-- What We Do -->
     <section class="about-content">
         <div class="container">
             <div class="content-section" data-aos="fade-up">
-                <h2>Who We Are</h2>
-                <p>PolyProfits is a fully automated Polymarket bot that trades on your behalf. Our goal is to make prediction-market participation hands-off: you set your preferences once, and the system runs 24/7.</p>
-                <p>Placeholder: add your company story, mission, and differentiators when you're ready.</p>
+                <h2>What We Do</h2>
+                <p>PolyProfits is a fully automated Polymarket bot that trades on your behalf. You connect your account, set your preferences once—risk level, markets, limits—and the system runs 24/7. No screens to watch, no daily decisions to make.</p>
+                <p>We handle execution, position management, and monitoring. You get exposure to real-world outcome markets—elections, events, and more—without the manual work. Set it and forget it.</p>
+            </div>
+
+            <!-- The Journey -->
+            <div class="content-section" data-aos="fade-up">
+                <h2>How We Got Here</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Manual Trading</h4>
+                            <p>Participating in prediction markets the old way—watching screens, placing trades by hand, missing opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Polymarket & Automation</h4>
+                            <p>Seeing Polymarket scale and realizing that execution and monitoring could be automated for members.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Building the Bot</h4>
+                            <p>Building a system that runs 24/7, respects risk parameters, and delivers a true set-and-forget experience.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>PolyProfits Today</h4>
+                            <p>Helping members participate in prediction markets hands-off—automated, transparent, and built for the long term.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Mission -->
+            <div class="content-section" data-aos="fade-up">
+                <h2>Our Mission</h2>
+                <p>PolyProfits exists to make prediction-market participation accessible without the grind. We believe everyone should be able to benefit from real-world outcome markets—without watching charts or placing trades manually.</p>
+                <div class="highlight-box">
+                    <p>We're not here to replace your judgment. We're here to run the execution and operations so you can participate in Polymarket 24/7, set your rules once, and let the system work for you.</p>
+                </div>
+            </div>
+
+            <!-- Our Vision -->
+            <div class="content-section" data-aos="fade-up">
+                <h2>Our Vision</h2>
+                <p>We see a future where prediction markets are a normal part of how people engage with real-world outcomes—and where participation doesn't require constant attention. Automated, transparent, and aligned with your preferences.</p>
+                <p>Our vision is a world where the barrier to prediction-market participation isn't time or expertise—it's simply having a system that runs for you. We want members to set it once, trust the process, and check results when they want—not because they have to.</p>
+            </div>
+
+            <!-- Our Values -->
+            <div class="content-section" data-aos="fade-up">
+                <h2>Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                        <h4>Automation</h4>
+                        <p>We run 24/7 so you don't have to. True set-and-forget.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-eye" aria-hidden="true"></i></div>
+                        <h4>Transparency</h4>
+                        <p>You see what the bot does. No black box—clear results.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                        <h4>Trust</h4>
+                        <p>We stay within your risk parameters. Your rules, our execution.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                        <h4>Results</h4>
+                        <p>We're built to perform. Real markets, real outcomes.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+                        <h4>Partnership</h4>
+                        <p>We succeed when our members do. Long-term alignment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What Makes Us Different -->
+            <div class="content-section" data-aos="fade-up">
+                <h2>What Makes Us Different</h2>
+                <p>Most providers talk about potential. We deliver a working system—a bot that actually runs on Polymarket, 24/7, with your preferences and risk controls built in.</p>
+                <p>We don't just advise you on prediction markets; we run the execution for you. You get automated exposure without the manual work. Traditional trading means watching screens. PolyProfits means setting it once and letting the system run. That's the difference.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wrapper: Team + Why Trust Us + CTA share same background down to footer -->
+    <div class="about-team-to-footer">
+    <!-- The Team (founder-section style from home page) -->
+    <section class="about-team-section" aria-labelledby="team-heading">
+        <div class="container about-team-container">
+            <h2 id="team-heading" class="about-team-heading">The Team</h2>
+            <p class="about-team-intro">We're builders and operators who wanted prediction-market participation without the manual grind. Different backgrounds, one goal: automated Polymarket trading that works.</p>
+
+            <article class="founder-row founder-row--image-left" data-aos="fade-up">
+                <div class="founder-image-wrap">
+                    <img src="assets/images/placeholders/photo.svg" alt="" class="founder-image" width="480" height="560" loading="lazy">
+                </div>
+                <div class="founder-content">
+                    <h3 class="founder-name">Founder One</h3>
+                    <p class="founder-title">Co-Founder</p>
+                    <div class="founder-bio">
+                        <p>Background in institutional finance and quantitative strategy. Built systems for risk and execution at scale before turning to prediction markets.</p>
+                        <p>Leads strategy and operations at PolyProfits so members get a set-and-forget experience—no screens, no daily decisions, just automated exposure to Polymarket.</p>
+                    </div>
+                    <div class="founder-socials">
+                        <a href="#" class="founder-social-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">X</a>
+                        <a href="#" class="founder-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="founder-row founder-row--image-right" data-aos="fade-up">
+                <div class="founder-content">
+                    <h3 class="founder-name">Founder Two</h3>
+                    <p class="founder-title">Co-Founder</p>
+                    <div class="founder-bio">
+                        <p>Entrepreneur and engineer focused on automation and decision systems. Previously built and scaled products in fintech.</p>
+                        <p>Drives the bot infrastructure behind PolyProfits—ensuring 24/7 automated operation and hands-off results for members.</p>
+                    </div>
+                    <div class="founder-socials">
+                        <a href="#" class="founder-social-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">X</a>
+                        <a href="#" class="founder-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+                    </div>
+                </div>
+                <div class="founder-image-wrap">
+                    <img src="assets/images/placeholders/photo.svg" alt="" class="founder-image" width="480" height="560" loading="lazy">
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Why Members Trust Us -->
+    <section class="about-content">
+        <div class="container">
+            <div class="content-section" data-aos="fade-up">
+                <h2>Why Members Trust Us</h2>
+                <p>Because we built a system that runs—and we're transparent about what it does. Members don't get promises; they get a bot that executes on Polymarket according to their preferences, with risk controls they set.</p>
+                <p>Trust isn't a slogan for us. It's built on clear parameters, automated execution, and results you can see. We succeed when our members do.</p>
             </div>
         </div>
     </section>
@@ -605,7 +874,7 @@
                 <h2>Ready to go automated?</h2>
                 <p>Get in touch and we'll walk you through setup.</p>
                 <div class="cta-buttons">
-                    <a href="https://go.polyprofits.co/fb-vsl" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <a href="https://go.polyprofits.co/fb-vsl?el=about-final-cta&h_source=website" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                         <span>Get Started</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -613,33 +882,34 @@
             </div>
         </div>
     </section>
+    </div>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <a href="/" class="footer-logo-link"><img src="assets/images/logos/logo-navy.png" alt="PolyProfits" class="footer-logo" width="200" height="44"></a>
+                    <a href="/" class="footer-logo-link"><img src="assets/images/logos/logo-white.png" alt="PolyProfits" class="footer-logo" width="200" height="44"></a>
                     <p>Automated Polymarket bot that wins on your behalf. Fully automated.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="process">How It Works</a></li>
-                        <li><a href="about">About Us</a></li>
-                        <li><a href="results">Results</a></li>
+                        <li><a href="process.html">How It Works</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="results.html">Results</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="legal/privacy-policy/">Privacy Policy</a></li>
-                        <li><a href="legal/terms-of-service/">Terms of Service</a></li>
+                        <li><a href="privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="terms-of-service/">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 PolyProfits. All rights reserved.</p>
+                <p>Copywright &copy; 2026 PolyProfits. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -654,7 +924,5 @@
             once: true
         });
     </script>
-    
-    <script src="light-pillar-bundle.js"></script>
 </body>
 </html> 

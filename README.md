@@ -22,13 +22,20 @@ Modern, minimal website for **PolyProfits** — an automated Polymarket bot that
 
 ## Develop
 
-**Workflow:** Run a local server → edit HTML/CSS/JS → see changes in the browser (refresh or use live reload) → when you’re happy, push to GitHub.
+**Workflow:** Run a local server → edit HTML/CSS/JS → see changes in the browser → when you’re happy, push to GitHub so the live site updates.
 
-### Local dev with live reload (if you have Node/npm)
+### 1. Start the local site (localhost)
 
-1. In Terminal: `cd` into this project folder, then run `npm install`
-2. Run: `npm run dev`
-3. Your browser should open at **http://localhost:3000** and reload when you save files.
+**Preferred – Node/npm (live reload when you save):**
+
+1. Open **Terminal** (or Cursor: **View → Terminal**).
+2. Go to the project: `cd /Users/tylerteves/PolyProfits`
+3. Install dependencies once: `npm install`
+4. Start the server: `npm run dev`
+5. Your browser should open at **http://localhost:3000**. Edit files and save; the page will reload automatically.
+6. To stop the server, press **Ctrl+C** in the terminal.
+
+**Important:** Always open **http://localhost:3000** in the browser (not by double‑clicking `index.html`). Opening the file directly can break layout and show odd shapes because CSS/scripts load incorrectly.
 
 ### If "This site can't be reached" or you don't use Node
 
@@ -48,9 +55,21 @@ Modern, minimal website for **PolyProfits** — an automated Polymarket bot that
 
 You won’t get auto-reload—refresh the page (Cmd+R or F5) after you save changes.
 
+### 2. Push to the live site when you’re done
+
+When your local changes look good and you want to update the live site:
+
+1. In the same project folder, stage and commit:  
+   `git add -A && git commit -m "Your short description of changes"`
+2. Push to GitHub:  
+   `git push origin main`  
+   (Or, if you use a token in `.env`:  
+   `set -a && . ./.env && set +a && git push https://${GITHUB_TOKEN}@github.com/OfferLaunch/polyprofits.git main`)
+3. If the live site is hosted from this repo (e.g. GitHub Pages), it will update after the push.
+
 ### Other options
 
-- Open `index.html` in a browser (double-click the file), or run a static server (e.g. `npx serve .`).
+- Run a static server (e.g. `npx serve .`) and open the URL it prints. Avoid double‑clicking `index.html` (file://)—the site can look broken (weird shapes, vertical nav) because paths and assets don’t load correctly.
 - Rebuild bundles if you change source:
    - `npm run build:silk`
    - `npm run build:pillnav`
