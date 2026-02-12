@@ -1450,7 +1450,7 @@ body.menu-open .nav-overlay {
     opacity: 0.9;
 }
 
-/* Desktop: original stacked icon – transparent, navy hand/gear */
+/* Desktop: original stacked icon – transparent, navy hand/gear (override base .system-visual-core) */
 .system-visual-core--stacked {
     position: relative;
     display: inline-flex;
@@ -1458,17 +1458,17 @@ body.menu-open .nav-overlay {
     justify-content: center;
     width: 96px;
     height: 96px;
-    border-radius: 0;
-    color: #1a2f4a;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    border-radius: 0 !important;
+    color: #1a2f4a !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .system-visual-core--stacked i {
     position: absolute;
     line-height: 1;
-    color: #1a2f4a;
+    color: #1a2f4a !important;
 }
 
 .system-visual-core--stacked .icon-base {
@@ -1509,13 +1509,13 @@ body.menu-open .nav-overlay {
     .system-visual-core--stacked {
         width: 88px;
         height: 88px;
-        border-radius: 50%;
-        background: #ffffff;
-        color: #1a2f4a;
-        box-shadow: 0 8px 24px rgba(26, 47, 74, 0.2);
+        border-radius: 50% !important;
+        background: #ffffff !important;
+        color: #1a2f4a !important;
+        box-shadow: 0 8px 24px rgba(26, 47, 74, 0.2) !important;
     }
     .system-visual-core--stacked i {
-        color: #1a2f4a;
+        color: #1a2f4a !important;
     }
     .system-visual-core--stacked .icon-base { font-size: 2.8rem; top: 42px; left: 14px; }
     .system-visual-core--stacked .icon-top { font-size: 1.85rem; top: 16px; left: 44px; }
