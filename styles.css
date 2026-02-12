@@ -1505,19 +1505,12 @@ body.menu-open .nav-overlay {
 }
 
 @media (max-width: 768px) {
-    /* Mobile: same style as other icons – keep dots, same shadow, navy hand/gear */
-    .system-visual-core--stacked {
-        width: 88px;
-        height: 88px;
-    }
-    .system-visual-core--stacked .icon-base { font-size: 2.8rem; top: 42px; left: 14px; }
-    .system-visual-core--stacked .icon-top { font-size: 1.85rem; top: 16px; left: 44px; }
-    .system-visual-core--stacked .icon-check { font-size: 0.95rem; top: 28px; left: 62px; }
+    /* Mobile: keep orb dots slightly smaller only; icon same size/look as desktop */
     .system-visual-orb .system-visual-node {
-        opacity: 0.25;
-        width: 8px;
-        height: 8px;
-        transform: rotate(calc(var(--i) * 60deg)) translateY(-64px);
+        opacity: 0.35;
+        width: 10px;
+        height: 10px;
+        transform: rotate(calc(var(--i) * 60deg)) translateY(-72px);
     }
 }
 
