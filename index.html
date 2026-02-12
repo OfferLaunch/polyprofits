@@ -57,8 +57,20 @@
         }
         /* Box section text: PolyProfits navy so readable on light background */
         .system-card-desc,
-        .system-benefit span {
+        .system-benefit span:not(.system-benefit-icon) {
             color: #1a2f4a !important;
+        }
+        .home-page .system-benefit-icon,
+        .home-page .system-benefit-icon i { color: #fff !important; }
+        /* Hero extra side padding on mobile */
+        @media (max-width: 768px) {
+            .hero-container { padding-left: 24px !important; padding-right: 24px !important; }
+            .hero-preheadline { padding-left: 20px !important; padding-right: 20px !important; }
+            .hero-title, .hero-subtitle { padding-left: 12px !important; padding-right: 12px !important; }
+        }
+        @media (max-width: 480px) {
+            .hero-container { padding-left: 20px !important; padding-right: 20px !important; }
+            .hero-preheadline { padding-left: 16px !important; padding-right: 16px !important; }
         }
         /* Hide VSL video until filmed – remove this rule when adding the video */
         .hero-video-box { display: none !important; }

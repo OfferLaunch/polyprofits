@@ -1455,16 +1455,19 @@ body.menu-open .nav-overlay {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #1a2f4a;
-    background: transparent;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--primary-color);
     border: none;
-    box-shadow: none;
+    box-shadow: 0 8px 24px rgba(26, 47, 74, 0.25);
 }
 
 .system-visual-core--stacked i {
     position: absolute;
     line-height: 1;
-    color: #1a2f4a;
+    color: #fff;
 }
 
 .system-visual-core--stacked .icon-base {
@@ -1487,17 +1490,33 @@ body.menu-open .nav-overlay {
 
 .system-visual-node {
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: var(--primary-color);
-    opacity: 0.4;
-    transform: rotate(calc(var(--i) * 60deg)) translateY(-80px);
+    opacity: 0.35;
+    transform: rotate(calc(var(--i) * 60deg)) translateY(-72px);
     transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
 }
 
 .system-card-visual:hover .system-visual-node {
     opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .system-visual-core--stacked {
+        width: 88px;
+        height: 88px;
+    }
+    .system-visual-core--stacked .icon-base { font-size: 2.8rem; top: 42px; left: 14px; }
+    .system-visual-core--stacked .icon-top { font-size: 1.85rem; top: 16px; left: 44px; }
+    .system-visual-core--stacked .icon-check { font-size: 0.95rem; top: 28px; left: 62px; }
+    .system-visual-orb .system-visual-node {
+        opacity: 0.25;
+        width: 8px;
+        height: 8px;
+        transform: rotate(calc(var(--i) * 60deg)) translateY(-64px);
+    }
 }
 
 .system-visual-node--active {
@@ -1632,8 +1651,13 @@ body.menu-open .nav-overlay {
 }
 
 .home-page .system-card-desc,
-.home-page .system-benefit span {
+.home-page .system-benefit span:not(.system-benefit-icon) {
     color: #1a2f4a;
+}
+
+/* System card visuals: white logos inside navy orbs (home) */
+.home-page .system-card-visual .system-visual-core img {
+    filter: brightness(0) invert(1);
 }
 .home-page .footer .footer-section p {
     color: rgba(255, 255, 255, 0.9);
@@ -2313,6 +2337,18 @@ body.menu-open .nav-overlay {
     background: var(--bg-card);
 }
 
+@media (max-width: 900px) {
+    .compare-section {
+        overflow-x: hidden;
+    }
+    .compare-section .container {
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+
 .compare-table {
     width: 100%;
     border-collapse: collapse;
@@ -2401,14 +2437,15 @@ body.menu-open .nav-overlay {
     font-weight: 500;
 }
 
-@media (max-width: 700px) {
-    /* Mobile: stack rows as full-width cards, no horizontal scroll */
+@media (max-width: 900px) {
+    /* Mobile/tablet: stack rows as full-width cards so whole table is visible, no horizontal scroll */
     .compare-table-wrap {
         overflow: visible;
-        border-radius: 0;
-        border: none;
-        box-shadow: none;
-        background: transparent;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        background: var(--bg-card);
+        max-width: 100%;
     }
     .compare-table,
     .compare-table tbody,
@@ -2416,6 +2453,7 @@ body.menu-open .nav-overlay {
     .compare-table td {
         display: block;
         width: 100%;
+        box-sizing: border-box;
     }
     .compare-table thead {
         display: none;
@@ -3434,10 +3472,10 @@ body.menu-open .nav-overlay {
         grid-template-columns: 1fr;
         gap: 2.5rem;
         text-align: center;
-        padding: 0 18px;
+        padding: 0 24px;
     }
     .hero-preheadline {
-        padding: 0 12px;
+        padding: 0 20px;
     }
     .hero-video-box {
         margin-left: 6px;
@@ -3450,6 +3488,7 @@ body.menu-open .nav-overlay {
         font-size: 2.2rem;
         line-height: 1.2;
         margin-bottom: 1rem;
+        padding: 0 8px;
     }
     
     .hero-subtitle {
@@ -3457,6 +3496,7 @@ body.menu-open .nav-overlay {
         line-height: 1.6;
         margin-bottom: 2rem;
         max-width: 100%;
+        padding: 0 12px;
     }
     
     .hero-buttons {
