@@ -1450,7 +1450,7 @@ body.menu-open .nav-overlay {
     opacity: 0.9;
 }
 
-/* Desktop: original stacked icon – transparent, navy hand/gear (override base .system-visual-core) */
+/* Stacked icon: same look as other section icons – shadow like .system-visual-core, navy hand/gear, dots visible */
 .system-visual-core--stacked {
     position: relative;
     display: inline-flex;
@@ -1462,7 +1462,7 @@ body.menu-open .nav-overlay {
     color: #1a2f4a !important;
     background: transparent !important;
     border: none !important;
-    box-shadow: none !important;
+    box-shadow: 0 8px 24px rgba(26, 47, 74, 0.25) !important;
 }
 
 .system-visual-core--stacked i {
@@ -1504,23 +1504,11 @@ body.menu-open .nav-overlay {
     opacity: 0.9;
 }
 
-/* Hide decorative dots on Set It and Forget It icon only (no dots behind hand/gear) */
-.system-visual-orb--hands-off .system-visual-node {
-    display: none !important;
-}
-
 @media (max-width: 768px) {
-    /* Mobile only: white circle background, blue hand and gear */
+    /* Mobile: same style as other icons – keep dots, same shadow, navy hand/gear */
     .system-visual-core--stacked {
         width: 88px;
         height: 88px;
-        border-radius: 50% !important;
-        background: #ffffff !important;
-        color: #1a2f4a !important;
-        box-shadow: 0 8px 24px rgba(26, 47, 74, 0.2) !important;
-    }
-    .system-visual-core--stacked i {
-        color: #1a2f4a !important;
     }
     .system-visual-core--stacked .icon-base { font-size: 2.8rem; top: 42px; left: 14px; }
     .system-visual-core--stacked .icon-top { font-size: 1.85rem; top: 16px; left: 44px; }
