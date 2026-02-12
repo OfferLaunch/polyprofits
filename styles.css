@@ -1504,6 +1504,11 @@ body.menu-open .nav-overlay {
     opacity: 0.9;
 }
 
+/* Hide decorative dots on Set It and Forget It icon only (no dots behind hand/gear) */
+.system-visual-orb--hands-off .system-visual-node {
+    display: none !important;
+}
+
 @media (max-width: 768px) {
     /* Mobile only: white circle background, blue hand and gear */
     .system-visual-core--stacked {

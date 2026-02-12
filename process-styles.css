@@ -5,7 +5,7 @@ body.process-page {
     background: #ffffff;
 }
 
-/* Process page: force mobile nav – hamburger visible, menu off-canvas (loads after styles.css so it wins) */
+/* Process page: force mobile nav – menu hidden from layout until .active, hamburger always visible */
 @media (max-width: 900px) {
     body.process-page .navbar .hamburger {
         display: flex !important;
@@ -15,6 +15,7 @@ body.process-page {
         z-index: 1002 !important;
     }
     body.process-page .navbar .nav-menu {
+        display: none !important;
         position: fixed !important;
         top: 0 !important;
         right: 0 !important;
@@ -33,6 +34,7 @@ body.process-page {
         border-left: 1px solid rgba(0, 0, 0, 0.06) !important;
     }
     body.process-page .navbar .nav-menu.active {
+        display: flex !important;
         transform: translateX(0) !important;
     }
 }

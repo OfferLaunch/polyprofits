@@ -28,7 +28,7 @@
 
     <link rel="manifest" href="manifest.json">
 
-    <link rel="preload" href="styles.css?v=6" as="style">
+    <link rel="preload" href="styles.css?v=7" as="style">
     <link rel="preload" href="script.js?v=1" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" as="style" crossorigin>
 
@@ -72,12 +72,21 @@
             .hero-container { padding-left: 20px !important; padding-right: 20px !important; }
             .hero-preheadline { padding-left: 16px !important; padding-right: 16px !important; }
         }
+        /* Set It and Forget It icon: mobile = white circle + blue hand/gear (inline so it always wins) */
+        @media (max-width: 768px) {
+            .home-page .system-card-visual .system-visual-orb .system-visual-core--stacked {
+                background: #ffffff !important;
+                border-radius: 50% !important;
+                box-shadow: 0 8px 24px rgba(26,47,74,0.2) !important;
+            }
+            .home-page .system-card-visual .system-visual-orb .system-visual-core--stacked i { color: #1a2f4a !important; }
+        }
         /* Hide VSL video until filmed – remove this rule when adding the video */
         .hero-video-box { display: none !important; }
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
     <link rel="stylesheet" href="light-pillar-bundle.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
@@ -299,7 +308,7 @@
                             </div>
                         </div>
                         <div class="system-card-visual" data-interactive>
-                            <div class="system-visual-orb">
+                            <div class="system-visual-orb system-visual-orb--hands-off">
                                 <span class="system-visual-core system-visual-core--quiet system-visual-core--stacked" aria-hidden="true">
                                     <i class="fas fa-hand-holding icon-base"></i>
                                     <i class="fas fa-cog icon-top"></i>
