@@ -1450,6 +1450,7 @@ body.menu-open .nav-overlay {
     opacity: 0.9;
 }
 
+/* Desktop: original stacked icon – transparent, navy hand/gear */
 .system-visual-core--stacked {
     position: relative;
     display: inline-flex;
@@ -1457,17 +1458,17 @@ body.menu-open .nav-overlay {
     justify-content: center;
     width: 96px;
     height: 96px;
-    border-radius: 50%;
-    color: #fff;
-    background: var(--primary-color);
+    border-radius: 0;
+    color: #1a2f4a;
+    background: transparent;
     border: none;
-    box-shadow: 0 8px 24px rgba(26, 47, 74, 0.25);
+    box-shadow: none;
 }
 
 .system-visual-core--stacked i {
     position: absolute;
     line-height: 1;
-    color: #fff;
+    color: #1a2f4a;
 }
 
 .system-visual-core--stacked .icon-base {
@@ -1504,9 +1505,17 @@ body.menu-open .nav-overlay {
 }
 
 @media (max-width: 768px) {
+    /* Mobile only: white circle background, blue hand and gear */
     .system-visual-core--stacked {
         width: 88px;
         height: 88px;
+        border-radius: 50%;
+        background: #ffffff;
+        color: #1a2f4a;
+        box-shadow: 0 8px 24px rgba(26, 47, 74, 0.2);
+    }
+    .system-visual-core--stacked i {
+        color: #1a2f4a;
     }
     .system-visual-core--stacked .icon-base { font-size: 2.8rem; top: 42px; left: 14px; }
     .system-visual-core--stacked .icon-top { font-size: 1.85rem; top: 16px; left: 44px; }
