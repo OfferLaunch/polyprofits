@@ -716,7 +716,7 @@ body.menu-open .nav-overlay {
     border-radius: 0;
     transform-origin: bottom center;
     transform: scaleY(calc(1 + var(--rise) * 0.4)) translateZ(0);
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background 0.2s ease-out;
+    transition: transform 0.04s linear, box-shadow 0.04s linear, background 0.04s linear;
     will-change: transform;
     background: rgba(26, 47, 74, calc(var(--rise) * 0.82));
     border: none;

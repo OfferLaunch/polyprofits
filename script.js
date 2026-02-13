@@ -472,36 +472,45 @@ document.querySelectorAll('form').forEach(form => {
     const radius = 50;
     let mouseX = -1000;
     let mouseY = -1000;
-    let rafId = null;
+    // Cache pillar centers so we don't call getBoundingClientRect on every mousemove
+    let pillarCenters = [];
+
+    function refreshPillarCenters() {
+        pillarCenters = Array.from(pillars).map(function(pillar) {
+            const r = pillar.getBoundingClientRect();
+            return { cx: r.left + r.width / 2, cy: r.top + r.height / 2 };
+        });
+    }
 
     function updatePillars() {
-        pillars.forEach(function(pillar) {
-            const r = pillar.getBoundingClientRect();
-            const cx = r.left + r.width / 2;
-            const cy = r.top + r.height / 2;
-            const dx = mouseX - cx;
-            const dy = mouseY - cy;
+        for (let i = 0; i < pillars.length; i++) {
+            const c = pillarCenters[i];
+            if (!c) continue;
+            const dx = mouseX - c.cx;
+            const dy = mouseY - c.cy;
             const dist = Math.sqrt(dx * dx + dy * dy);
             const rise = dist < radius ? Math.max(0, 1 - dist / radius) : 0;
-            pillar.style.setProperty('--rise', rise);
-        });
-        rafId = null;
+            pillars[i].style.setProperty('--rise', rise);
+        }
     }
 
-    function scheduleUpdate() {
-        if (rafId === null) rafId = requestAnimationFrame(updatePillars);
-    }
+    refreshPillarCenters();
+    var resizeObserver = typeof ResizeObserver !== 'undefined'
+        ? new ResizeObserver(refreshPillarCenters)
+        : null;
+    if (resizeObserver && container) resizeObserver.observe(container);
+    window.addEventListener('resize', refreshPillarCenters);
 
     trackTarget.addEventListener('mousemove', function(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        scheduleUpdate();
-    });
+        updatePillars();
+    }, { passive: true });
 
     trackTarget.addEventListener('mouseleave', function() {
         mouseX = -1000;
         mouseY = -1000;
-        scheduleUpdate();
+        updatePillars();
     });
 })();
 
