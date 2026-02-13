@@ -526,24 +526,42 @@
             });
         }
     </script>
-    <!-- Force hamburger visible on mobile via inline style (overrides any CSS) -->
+    <!-- Force hamburger visible on mobile: run after load and set inline style (beats any CSS) -->
     <script>
         (function() {
             function ensureHamburgerVisible() {
                 var w = window.innerWidth || document.documentElement.clientWidth;
-                var h = document.querySelector('.navbar .hamburger');
+                var h = document.querySelector('.hamburger-mobile-visible');
                 if (h && w <= 900) {
-                    h.style.display = 'flex';
-                    h.style.visibility = 'visible';
-                    h.style.opacity = '1';
+                    h.style.setProperty('display', 'flex', 'important');
+                    h.style.setProperty('visibility', 'visible', 'important');
+                    h.style.setProperty('opacity', '1', 'important');
                 }
             }
             ensureHamburgerVisible();
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', ensureHamburgerVisible);
             }
+            window.addEventListener('load', ensureHamburgerVisible);
             window.addEventListener('resize', ensureHamburgerVisible);
         })();
     </script>
+    <!-- Last-in-document styles so process mobile hamburger always wins -->
+    <style>
+        @media (max-width: 900px) {
+            body.process-page .navbar .nav-container .hamburger-mobile-visible {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+            }
+            body.process-page .navbar .nav-menu {
+                display: none !important;
+            }
+            body.process-page .navbar .nav-menu.active {
+                display: flex !important;
+            }
+        }
+    </style>
 </body>
 </html> 
