@@ -501,17 +501,38 @@ document.querySelectorAll('form').forEach(form => {
     if (resizeObserver && container) resizeObserver.observe(container);
     window.addEventListener('resize', refreshPillarCenters);
 
-    trackTarget.addEventListener('mousemove', function(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        updatePillars();
-    }, { passive: true });
+    function isMobile() {
+        return window.matchMedia('(max-width: 768px)').matches;
+    }
 
-    trackTarget.addEventListener('mouseleave', function() {
+    function resetPillarsToRest() {
         mouseX = -1000;
         mouseY = -1000;
         updatePillars();
-    });
+    }
+
+    function onMouseMove(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        updatePillars();
+    }
+    function onMouseLeave() {
+        resetPillarsToRest();
+    }
+
+    function applyOrRemoveTracking() {
+        if (isMobile()) {
+            trackTarget.removeEventListener('mousemove', onMouseMove);
+            trackTarget.removeEventListener('mouseleave', onMouseLeave);
+            resetPillarsToRest();
+        } else {
+            trackTarget.addEventListener('mousemove', onMouseMove, { passive: true });
+            trackTarget.addEventListener('mouseleave', onMouseLeave);
+        }
+    }
+
+    applyOrRemoveTracking();
+    window.addEventListener('resize', applyOrRemoveTracking);
 })();
 
 // PolyProfits
