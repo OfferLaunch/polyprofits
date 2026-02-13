@@ -38,18 +38,6 @@
         .nav-container { max-width: 960px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; justify-content: space-between; align-items: center; background: #fff; border-radius: 9999px; box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.06); overflow: visible; }
         .nav-logo-img { height: 40px; width: auto; }
         .nav-container .hamburger { flex-shrink: 0; min-width: 44px; }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; border: none; background: transparent; width: 44px; height: 44px; justify-content: center; align-items: center; z-index: 1002; }
-        .hamburger span { width: 22px; height: 2px; background: #1a2f4a; border-radius: 1px; margin: 3px 0; transition: 0.3s; }
-        .hamburger-mobile-visible { display: none !important; }
-        .hamburger-desktop { display: none !important; }
-        @media (max-width: 900px) {
-            .hamburger-mobile-visible { display: flex !important; visibility: visible !important; opacity: 1 !important; }
-        }
-        @media (max-width: 768px) {
-            .hamburger { display: flex !important; visibility: visible !important; }
-            .nav-menu { display: none !important; position: fixed !important; top: 0 !important; right: 0 !important; width: min(320px, 100vw) !important; height: 100vh !important; flex-direction: column !important; justify-content: flex-start !important; align-items: stretch !important; background: rgba(255,255,255,0.98) !important; padding: 88px 1.5rem 2rem !important; box-shadow: -4px 0 24px rgba(0,0,0,0.1) !important; transform: translateX(100%) !important; transition: transform 0.3s ease !important; overflow-y: auto !important; z-index: 1001 !important; border-left: 1px solid rgba(0,0,0,0.06) !important; }
-            .nav-menu.active { display: flex !important; transform: translateX(0) !important; }
-        }
     
         /* Final CTA Section */
         .final-cta {
@@ -339,17 +327,6 @@
                     <img src="assets/images/logos/logo-navy.png" alt="PolyProfits" class="nav-logo-img" width="180" height="40">
                 </a>
             </div>
-            <!-- Mobile-only hamburger (first in DOM so script attaches; always visible on small screens) -->
-            <button type="button" class="hamburger hamburger-mobile-visible" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <button type="button" class="hamburger hamburger-desktop" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="process.html">How It Works</a></li>
@@ -357,6 +334,11 @@
                 <li><a href="results.html">Results</a></li>
                 <li><a href="https://go.polyprofits.co/fb-vsl?el=process-nav-get-started&h_source=website" class="cta-button" target="_blank" rel="noopener noreferrer">Get Started</a></li>
             </ul>
+            <button type="button" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
@@ -526,42 +508,5 @@
             });
         }
     </script>
-    <!-- Force hamburger visible on mobile: run after load and set inline style (beats any CSS) -->
-    <script>
-        (function() {
-            function ensureHamburgerVisible() {
-                var w = window.innerWidth || document.documentElement.clientWidth;
-                var h = document.querySelector('.hamburger-mobile-visible');
-                if (h && w <= 900) {
-                    h.style.setProperty('display', 'flex', 'important');
-                    h.style.setProperty('visibility', 'visible', 'important');
-                    h.style.setProperty('opacity', '1', 'important');
-                }
-            }
-            ensureHamburgerVisible();
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', ensureHamburgerVisible);
-            }
-            window.addEventListener('load', ensureHamburgerVisible);
-            window.addEventListener('resize', ensureHamburgerVisible);
-        })();
-    </script>
-    <!-- Last-in-document styles so process mobile hamburger always wins -->
-    <style>
-        @media (max-width: 900px) {
-            body.process-page .navbar .nav-container .hamburger-mobile-visible {
-                display: flex !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                pointer-events: auto !important;
-            }
-            body.process-page .navbar .nav-menu {
-                display: none !important;
-            }
-            body.process-page .navbar .nav-menu.active {
-                display: flex !important;
-            }
-        }
-    </style>
 </body>
 </html> 
